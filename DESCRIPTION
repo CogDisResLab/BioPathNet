@@ -5,6 +5,8 @@ Version: 0.1.0
 Author: Ali Sajid Imami
 Maintainer: Ali Sajid Imami <Ali.Sajid.Imami@gmail.com>
 Description: This package aims to provide a simple interface to perform the Three Pod Analysis of RNASeq dataaset. In addition, this also provides utility functions to perform the individual components.
-License: GPLv3
+License: GPL-3
 Encoding: UTF-8
 LazyData: true
+Suggests: 
+    testthat
