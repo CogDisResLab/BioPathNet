@@ -13,35 +13,35 @@ This class stores the result of the results from iLINCS
 \section{Slots}{
 
 \describe{
-\item{\code{threshold_up_ilincs}}{numeric. LFC threshold for up-regulated genes}
+\item{\code{threshold_up}}{numeric. LFC threshold for up-regulated genes}
 
-\item{\code{threshold_down_ilincs}}{numeric. LFC threshold for down-regulated genes}
+\item{\code{threshold_down}}{numeric. LFC threshold for down-regulated genes}
 
-\item{\code{threshold_pval_ilincs}}{numeric. P Value threshold for genes.}
+\item{\code{threshold_pval}}{numeric. P Value threshold for genes.}
 
 \item{\code{threshold_similarity}}{numeric. Similarity threshold}
 
 \item{\code{l1000_subset}}{tbl_df. Subset of L1000 genes in the dataset}
 
-\item{\code{upregulated_ilincs}}{tbl_df. L1000 genes up-regulatedd in dataset}
+\item{\code{upregulated_genes}}{tbl_df. L1000 genes up-regulatedd in dataset}
 
-\item{\code{downregulated_ilincs}}{tbl_df. L1000 genes down-regulated in dataset}
+\item{\code{downregulated_genes}}{tbl_df. L1000 genes down-regulated in dataset}
 
 \item{\code{ilincs_query_signature}}{tbl_df. Complete iLINCS Query signature}
 
-\item{\code{all_perturbagens_ilincs}}{tbl_df. Complete list returned from iLINCS of perturbagens}
+\item{\code{all_perturbagens}}{tbl_df. Complete list returned from iLINCS of perturbagens}
 
-\item{\code{filtered_perturbagens_ilincs}}{tbl_df. Filtered list of perturbagens by the similarity threshold}
+\item{\code{filtered_perturbagens}}{tbl_df. Filtered list of perturbagens by the similarity threshold}
 
 \item{\code{num_genes_l1000}}{numeric. Number of L1000 genes in dataset}
 
-\item{\code{num_genes_upregulated_ilincs}}{numeric. Number of up-regulated L1000 genes in dataset}
+\item{\code{num_genes_upregulated}}{numeric. Number of up-regulated L1000 genes in dataset}
 
-\item{\code{num_genes_downregulated_ilincs}}{numeric. Number of down-regulated L1000 genes in dataset}
+\item{\code{num_genes_downregulated}}{numeric. Number of down-regulated L1000 genes in dataset}
 
-\item{\code{num_all_perturbagens_ilincs}}{numeric. Number of all perturbagens returned by iLINCS}
+\item{\code{num_all_perturbagens}}{numeric. Number of all perturbagens returned by iLINCS}
 
-\item{\code{num_filtered_perturbagens_ilincs}}{numeric. Number of filtered perturbagens returned by iLINCS}
+\item{\code{num_filtered_perturbagens}}{numeric. Number of filtered perturbagens returned by iLINCS}
 }}
 
 \examples{
