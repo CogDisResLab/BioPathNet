@@ -17,6 +17,28 @@ conditional_dataset <- function(genes, logfc, pvalues = NULL) {
   out
 }
 
+#' Prepare the data for downstream analysis
+#'
+#' This function takes vectors of gene names, log Fold-change values and optionally p-values
+#' and formats them into a tibble for downstream analysis.
+#'
+#' The function returns an object of class BPNList that will update as the analysis proceeds
+#'
+#' @param genes a character vector of gene names
+#' @param logfc a numeric vector of log fold-change values
+#' @param pvalues (optional) a numeric vector of p-values
+#'
+#' @return An object of class BPNList with the following slot set:
+#'
+#' input
+#'
+#' @export
+#'
+#' @examples
+#'
+#' data(testdata)
+#' bpn <- prepare_data(testdata$genes, testdata$foldchange)
+
 prepare_data <- function(genes, logfc, pvalues = NULL) {
   # Generate a dataset with a formal and expected structure
   # and return a BPNList object
