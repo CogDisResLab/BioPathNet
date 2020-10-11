@@ -46,3 +46,6 @@ This class stores the input parameters and results of the Gene Set Enrichment An
 \item{\code{num_sig_down_enrichr}}{numeric. Number of significant enriched pathways in down-regulated genes}
 }}
 
+\examples{
+TRUE
+}

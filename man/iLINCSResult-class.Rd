@@ -44,3 +44,6 @@ This class stores the result of the results from iLINCS
 \item{\code{num_filtered_perturbagens_ilincs}}{numeric. Number of filtered perturbagens returned by iLINCS}
 }}
 
+\examples{
+TRUE
+}

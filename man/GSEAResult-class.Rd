@@ -48,3 +48,6 @@ This class stores the input parameters and results of the Gene Set Enrichment An
 \item{\code{pathways}}{tbl_df. The pathways we used, either built-in or user-supplied}
 }}
 
+\examples{
+TRUE
+}

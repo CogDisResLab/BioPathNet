@@ -30,3 +30,6 @@ stores the subsequently generated results.
 \item{\code{integrated}}{IntegratedResult. An instance of \link{IntegratedResult-class} class storing the results after integrating the three components}
 }}
 
+\examples{
+TRUE
+}
