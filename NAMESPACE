@@ -2,3 +2,7 @@
 
 export(get_revigo_output)
 export(prepare_data)
+exportClasses(BPNList)
+exportClasses(EnrichRResult)
+exportClasses(GSEAResult)
+exportClasses(iLINCSResult)
