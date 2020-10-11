@@ -23,6 +23,7 @@ Imports:
 Collate: 
     'classes.R'
     'BPNList.R'
+    'GSEAResult.R'
     'S4methods.R'
     'get_revigo_output.R'
     'prepare_data.R'
