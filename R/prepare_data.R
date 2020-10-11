@@ -35,9 +35,7 @@ conditional_dataset <- function(genes, logfc, pvalues = NULL) {
 #' @export
 #'
 #' @examples
-#'
-#' data(testdata)
-#' bpn <- prepare_data(testdata$genes, testdata$foldchange)
+
 
 prepare_data <- function(genes, logfc, pvalues = NULL) {
   # Generate a dataset with a formal and expected structure
@@ -47,11 +45,11 @@ prepare_data <- function(genes, logfc, pvalues = NULL) {
     stop("genes and logfc must be specified")
   }
 
-  if (!is_vector(genes) | !is_character(genes)) {
+  if (!purrr::is_vector(genes) | !is_character(genes)) {
     stop("genes must be a character vector of gene names")
   }
 
-  if (!is_vector(logfc) | !is.numeric(logfc)) {
+  if (!purrr::is_vector(logfc) | !is.numeric(logfc)) {
     stop("logfc must be a numeric vector containing log fold-change values")
   }
 
@@ -60,7 +58,7 @@ prepare_data <- function(genes, logfc, pvalues = NULL) {
   }
 
   if (!is.null(pvalues)) {
-    if (!is_vector(pvalues) | !is.numeric(pvalues)) {
+    if (!purrr::is_vector(pvalues) | !is.numeric(pvalues)) {
       stop("pvalues must be a numeric vector containing pvalues")
     }
     if (length(pvalues) != length(genes)) {
@@ -74,3 +72,4 @@ prepare_data <- function(genes, logfc, pvalues = NULL) {
 
   bpn
 }
+
