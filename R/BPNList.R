@@ -1,4 +1,5 @@
 #' @include classes.R
+#' @import methods
 NULL
 
 

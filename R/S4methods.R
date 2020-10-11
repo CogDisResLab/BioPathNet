@@ -1,15 +1,12 @@
 #' @include classes.R
+#' @import stringr methods
 NULL
-
-
-require(methods)
-require(stringr)
 
 setMethod("show",
           signature = c("BPNList"),
           definition = function(object) {
             print(
-              str_glue("
+              stringr::str_glue("
 An Object of class {class(object)}
 Input Size: \t\t\t{nrow(object@input)} Differentially Expressed Genes
 GSEA Results: \t\t\t{ifelse(is_empty(object@gsea@alpha), \"Analysis Not Run\",\"Analysis Completed\")}

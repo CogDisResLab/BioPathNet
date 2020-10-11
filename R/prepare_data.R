@@ -1,3 +1,7 @@
+#' @include classes.R
+#' @import tibble dplyr purrr
+NULL
+
 conditional_dataset <- function(genes, logfc, pvalues = NULL) {
 
   # return a dataset with two or three columns
@@ -12,7 +16,7 @@ conditional_dataset <- function(genes, logfc, pvalues = NULL) {
   }
 
   out <- dataset %>%
-    arrange(desc(Value_LogDiffExp))
+    dplyr::arrange(desc(Value_LogDiffExp))
 
   out
 }

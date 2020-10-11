@@ -1,4 +1,5 @@
-require(methods)
+#' @import methods
+NULL
 
 #' GSEAResult-class: Class storing GSEA Results
 #'
@@ -99,21 +100,21 @@ setClass("EnrichRResult",
 #'
 #' This class stores the result of the results from iLINCS
 #'
-#' @slot threshold_up_ilincs numeric. LFC threshold for up-regulated genes
-#' @slot threshold_down_ilincs numeric. LFC threshold for down-regulated genes
-#' @slot threshold_pval_ilincs numeric. P Value threshold for genes.
+#' @slot threshold_up numeric. LFC threshold for up-regulated genes
+#' @slot threshold_down numeric. LFC threshold for down-regulated genes
+#' @slot threshold_pval numeric. P Value threshold for genes.
 #' @slot threshold_similarity numeric. Similarity threshold
 #' @slot l1000_subset tbl_df. Subset of L1000 genes in the dataset
-#' @slot upregulated_ilincs tbl_df. L1000 genes up-regulatedd in dataset
-#' @slot downregulated_ilincs tbl_df. L1000 genes down-regulated in dataset
+#' @slot upregulated_genes tbl_df. L1000 genes up-regulatedd in dataset
+#' @slot downregulated_genes tbl_df. L1000 genes down-regulated in dataset
 #' @slot ilincs_query_signature tbl_df. Complete iLINCS Query signature
-#' @slot all_perturbagens_ilincs tbl_df. Complete list returned from iLINCS of perturbagens
-#' @slot filtered_perturbagens_ilincs tbl_df. Filtered list of perturbagens by the similarity threshold
+#' @slot all_perturbagens tbl_df. Complete list returned from iLINCS of perturbagens
+#' @slot filtered_perturbagens tbl_df. Filtered list of perturbagens by the similarity threshold
 #' @slot num_genes_l1000 numeric. Number of L1000 genes in dataset
-#' @slot num_genes_upregulated_ilincs numeric. Number of up-regulated L1000 genes in dataset
-#' @slot num_genes_downregulated_ilincs numeric. Number of down-regulated L1000 genes in dataset
-#' @slot num_all_perturbagens_ilincs numeric. Number of all perturbagens returned by iLINCS
-#' @slot num_filtered_perturbagens_ilincs numeric. Number of filtered perturbagens returned by iLINCS
+#' @slot num_genes_upregulated numeric. Number of up-regulated L1000 genes in dataset
+#' @slot num_genes_downregulated numeric. Number of down-regulated L1000 genes in dataset
+#' @slot num_all_perturbagens numeric. Number of all perturbagens returned by iLINCS
+#' @slot num_filtered_perturbagens numeric. Number of filtered perturbagens returned by iLINCS
 #'
 #' @return
 #' @export
