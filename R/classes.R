@@ -119,21 +119,21 @@ setClass("EnrichRResult",
 #' @examples
 setClass("iLINCSResult",
          slots = c(
-           threshold_up_ilincs = "numeric", # LFC threshold for up-regulated genes
-           threshold_down_ilincs = "numeric", # LFC threshold for down-regulated genes
-           threshold_pval_ilincs = "numeric", # P Value threshold for genes.
+           threshold_up = "numeric", # LFC threshold for up-regulated genes
+           threshold_down = "numeric", # LFC threshold for down-regulated genes
+           threshold_pval = "numeric", # P Value threshold for genes.
            threshold_similarity = "numeric", # Similarity threshold
            l1000_subset = "tbl_df", # Subset of L1000 genes in the dataset
-           upregulated_ilincs = "tbl_df", # L1000 genes up-regulatedd in dataset
-           downregulated_ilincs = "tbl_df", # L1000 genes down-regulated in dataset
+           upregulated_genes = "tbl_df", # L1000 genes up-regulatedd in dataset
+           downregulated_genes = "tbl_df", # L1000 genes down-regulated in dataset
            ilincs_query_signature = "tbl_df", # Complete iLINCS Query signature
-           all_perturbagens_ilincs = "tbl_df", # Complete list returned from iLINCS of perturbagens
-           filtered_perturbagens_ilincs = "tbl_df", # Filtered list of perturbagens by the similarity threshold
+           all_perturbagens = "tbl_df", # Complete list returned from iLINCS of perturbagens
+           filtered_perturbagens = "tbl_df", # Filtered list of perturbagens by the similarity threshold
            num_genes_l1000 = "numeric", # Number of L1000 genes in dataset
-           num_genes_upregulated_ilincs = "numeric", # Number of up-regulated L1000 genes in dataset
-           num_genes_downregulated_ilincs = "numeric", # Number of down-regulated L1000 genes in dataset
-           num_all_perturbagens_ilincs = "numeric", # Number of all perturbagens returned by iLINCS
-           num_filtered_perturbagens_ilincs = "numeric" # Number of filtered perturbagens returned by iLINCS
+           num_genes_upregulated = "numeric", # Number of up-regulated L1000 genes in dataset
+           num_genes_downregulated = "numeric", # Number of down-regulated L1000 genes in dataset
+           num_all_perturbagens = "numeric", # Number of all perturbagens returned by iLINCS
+           num_filtered_perturbagens = "numeric" # Number of filtered perturbagens returned by iLINCS
          ))
 
 setClass("LEResult",
