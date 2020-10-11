@@ -26,6 +26,7 @@ require(methods)
 #' @export
 #'
 #' @examples
+#' TRUE
 setClass("GSEAResult",
          slots = c(
            alpha = "numeric", # The Alpha threshold for significance
@@ -73,6 +74,7 @@ setClass("GSEAResult",
 #' @export
 #'
 #' @examples
+#' TRUE
 setClass("EnrichRResult",
          slots = c(
            alpha = "numeric", # The Alpha threshold for significance
@@ -117,6 +119,7 @@ setClass("EnrichRResult",
 #' @export
 #'
 #' @examples
+#' TRUE
 setClass("iLINCSResult",
          slots = c(
            threshold_up = "numeric", # LFC threshold for up-regulated genes
@@ -136,16 +139,45 @@ setClass("iLINCSResult",
            num_filtered_perturbagens = "numeric" # Number of filtered perturbagens returned by iLINCS
          ))
 
+#' LEResult-class: Class containing Leading Edge Analysis results
+#'
+#' @slot placeholder numeric.
+#'
+#' @return
+#' @export
+#'
+#' @examples
+#' TRUE
+
 setClass("LEResult",
          slots = c(
            placeholder = "numeric"
          ))
+
+#' RevigoResult-class: Class containing results from Revigo
+#'
+#' @slot placeholder numeric.
+#'
+#' @return
+#' @export
+#'
+#' @examples
+#' TRUE
 
 setClass("RevigoResult",
          slots = c(
            placeholder = "numeric"
          ))
 
+#' IntegratedResult-class: Class containing Integrated results
+#'
+#' @slot placeholder numeric.
+#'
+#' @return
+#' @export
+#'
+#' @examples
+#' TRUE
 setClass("IntegratedResult",
          slots = c(
            placeholder = "numeric"
@@ -169,6 +201,7 @@ setClass("IntegratedResult",
 #' @export
 #'
 #' @examples
+#' TRUE
 setClass("BPNList",
          slots = c(
            input = "tbl_df",

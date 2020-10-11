@@ -35,7 +35,7 @@ conditional_dataset <- function(genes, logfc, pvalues = NULL) {
 #' @export
 #'
 #' @examples
-
+#' TRUE
 
 prepare_data <- function(genes, logfc, pvalues = NULL) {
   # Generate a dataset with a formal and expected structure
@@ -45,7 +45,7 @@ prepare_data <- function(genes, logfc, pvalues = NULL) {
     stop("genes and logfc must be specified")
   }
 
-  if (!purrr::is_vector(genes) | !is_character(genes)) {
+  if (!purrr::is_vector(genes) | !purrr::is_character(genes)) {
     stop("genes must be a character vector of gene names")
   }
 
