@@ -1,3 +1,6 @@
+#' @include classes.R
+NULL
+
 
 BPNList <- function(input, gsea, enrichr, ilincs, leading, revigo, integrated) {
   # Construct a BPNList object

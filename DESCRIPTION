@@ -18,3 +18,9 @@ Imports:
     readr,
     stringr,
     purrr
+Collate: 
+    'classes.R'
+    'BPNList.R'
+    'S4methods.R'
+    'get_revigo_output.R'
+    'prepare_data.R'
