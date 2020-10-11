@@ -8,7 +8,7 @@ conditional_dataset <- function(genes, logfc, pvalues = NULL) {
     Value_LogDiffExp = logfc)
 
   if (!is.null(pvalues)) {
-    dataset$pvalues <- pvalues
+    dataset$Significane_pvalue <- pvalues
   }
 
   out <- dataset %>%
@@ -43,11 +43,15 @@ prepare_data <- function(genes, logfc, pvalues = NULL) {
   # Generate a dataset with a formal and expected structure
   # and return a BPNList object
 
+  if (missing(genes) | missing(logfc)) {
+    stop("genes and logfc must be specified")
+  }
+
   if (!is_vector(genes) | !is_character(genes)) {
     stop("genes must be a character vector of gene names")
   }
 
-  if (!is_vector(logfc) | !is_double(logfc)) {
+  if (!is_vector(logfc) | !is.numeric(logfc)) {
     stop("logfc must be a numeric vector containing log fold-change values")
   }
 
@@ -56,7 +60,7 @@ prepare_data <- function(genes, logfc, pvalues = NULL) {
   }
 
   if (!is.null(pvalues)) {
-    if (!is_vector(pvalues) | !is_double(pvalues)) {
+    if (!is_vector(pvalues) | !is.numeric(pvalues)) {
       stop("pvalues must be a numeric vector containing pvalues")
     }
     if (length(pvalues) != length(genes)) {
