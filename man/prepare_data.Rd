@@ -25,8 +25,3 @@ and formats them into a tibble for downstream analysis.
 \details{
 The function returns an object of class BPNList that will update as the analysis proceeds
 }
-\examples{
-
-data(testdata)
-bpn <- prepare_data(testdata$genes, testdata$foldchange)
-}
