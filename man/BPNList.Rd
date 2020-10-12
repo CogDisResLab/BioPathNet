@@ -7,7 +7,7 @@
 BPNList(input, gsea, enrichr, ilincs, leading, revigo, integrated)
 }
 \arguments{
-\item{input}{tbl_df A tibble with the differentialy expressed genes}
+\item{input}{tbl_df A tibble with the differentially expressed genes}
 
 \item{gsea}{GSEAResult An object containing the GSEA results}
 
