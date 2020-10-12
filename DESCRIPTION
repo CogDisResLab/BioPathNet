@@ -20,7 +20,8 @@ Imports:
     purrr,
     base,
     methods,
-    fgsea
+    fgsea,
+    enrichR
 Collate: 
     'classes.R'
     'BPNList.R'

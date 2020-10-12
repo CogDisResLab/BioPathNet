@@ -30,3 +30,16 @@ setMethod("gsea<-", "BPNList",
               return(object)
             }
             })
+
+setGeneric("enrichr", function(object, ...) {standardGeneric("enrichr")})
+setMethod("enrichr", "BPNList",
+          function(object) {object@enrichr})
+
+setGeneric("enrichr<-", function(object, value) {standardGeneric("enrichr<-")})
+setMethod("enrichr<-", "BPNList",
+          function(object, value) {
+            object@enrichr <- value
+            if (validObject(object)) {
+              return(object)
+            }
+          })
