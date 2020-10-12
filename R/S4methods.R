@@ -17,3 +17,16 @@ Integrated Results: \t\t{ifelse(is_empty(object@integrated@placeholder), \"Analy
             )
             invisible(NULL)
           })
+
+setGeneric("gsea", function(object, ...) {standardGeneric("gsea")})
+setMethod("gsea", "BPNList",
+          function(object) {object@gsea})
+
+setGeneric("gsea<-", function(object, value) {standardGeneric("gsea<-")})
+setMethod("gsea<-", "BPNList",
+          function(object, value) {
+            object@gsea <- value
+            if (validObject(object)) {
+              return(object)
+            }
+            })
