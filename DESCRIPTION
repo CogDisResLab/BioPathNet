@@ -19,11 +19,13 @@ Imports:
     stringr,
     purrr,
     base,
-    methods
+    methods,
+    fgsea
 Collate: 
     'classes.R'
     'BPNList.R'
     'GSEAResult.R'
     'S4methods.R'
+    'do_gsea_pod.R'
     'get_revigo_output.R'
     'prepare_data.R'
