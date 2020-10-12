@@ -14,7 +14,7 @@ NULL
 #' @return
 #' @export
 #'
-#' @import dplyr
+#' @import dplyr tibble
 #'
 #' @examples
 GSEAResult <- function(results, pathways, lower, upper, alpha, upreg, downreg) {
@@ -27,27 +27,31 @@ GSEAResult <- function(results, pathways, lower, upper, alpha, upreg, downreg) {
 
   pos_enriched <- results %>%
     dplyr::filter(ES > 0) %>%
-    dplyr::arrange(desc(ES), pval)
+    dplyr::arrange(desc(ES), pval) %>%
+    tibble::tibble()
 
   neg_enriched <- results %>%
     dplyr::filter(ES < 0) %>%
-    dplyr::arrange(desc(ES), pval)
+    dplyr::arrange(desc(ES), pval) %>%
+    tibble::tibble()
 
   sig_pos_enriched <- pos_enriched %>%
     dplyr::filter(pval < alpha) %>%
-    dplyr::arrange(desc(ES), pval)
+    dplyr::arrange(desc(ES), pval) %>%
+    tibble::tibble()
 
   sig_neg_enriched <- neg_enriched %>%
     dplyr::filter(pval < alpha) %>%
-    dplyr::arrange(desc(ES), pval)
+    dplyr::arrange(desc(ES), pval) %>%
+    tibble::tibble()
 
-  num_tested <- nrows(results)
-  num_upreg <- nrows(upreg)
-  num_downreg <- nrows(downreg)
-  num_pos_enriched <- nrows(pos_enriched)
-  num_neg_enriched <- nrows(neg_enriched)
-  num_sig_pos_enriched <- nrows(sig_pos_enriched)
-  num_sig_neg_enriched <- nrows(sig_neg_enriched)
+  num_tested <- nrow(results)
+  num_upreg <- nrow(upreg)
+  num_downreg <- nrow(downreg)
+  num_pos_enriched <- nrow(pos_enriched)
+  num_neg_enriched <- nrow(neg_enriched)
+  num_sig_pos_enriched <- nrow(sig_pos_enriched)
+  num_sig_neg_enriched <- nrow(sig_neg_enriched)
 
   g <- new("GSEAResult",
            alpha = alpha,

@@ -36,7 +36,7 @@ setClass("GSEAResult",
            threshold_down = "numeric", # the logfc threshold for down-regulated genes
            upregulated_genes = "tbl_df", # The up-regulated genes from the input DEG tibble
            downregulated_genes = "tbl_df", # The down-regulated genes from the input DEG tibble
-           pathways = "tbl_df", # The pathways we used, either built-in or user-supplied
+           pathways = "list", # The pathways we used, either built-in or user-supplied
            pos_enriched = "tbl_df", # The positively enriched pathways
            neg_enriched = "tbl_df", # The negatively enriched pathways
            sig_pos_enriched = "tbl_df", # Significant positively enriched pathways
