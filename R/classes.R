@@ -9,6 +9,7 @@ NULL
 #' @slot threshold_up numeric. The logfc threshold for up-regulated genes
 #' @slot threshold_down numeric. The logfc threshold for down-regulated genes
 #' @slot upregulated_genes tbl_df. The up-regulated genes from the input DEG tibble
+#' @slot pathways tbl_df. The pathways we used, either built-in or user-supplied
 #' @slot downregulated_genes tbl_df. The down-regulated genes from the input DEG tibble
 #' @slot pos_enriched tbl_df. The positively enriched pathways
 #' @slot neg_enriched tbl_df. The negatively enriched pathways
@@ -21,7 +22,7 @@ NULL
 #' @slot num_neg_enriched numeric. Number of negatively enriched pathways
 #' @slot num_sig_pos_enriched numeric. Number of significant positively enriched pathways
 #' @slot num_sig_neg_enriched numeric. Number of significant negatively enriched pathways
-#' @slot pathways tbl_df. The pathways we used, either built-in or user-supplied
+
 #'
 #' @return
 #' @export
