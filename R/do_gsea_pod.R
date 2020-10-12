@@ -24,7 +24,7 @@ do_gsea_pod <- function(bpn, species = "hsapiens", gmtfile = NULL,
                         lower = NULL, upper = NULL, alpha = 0.05,
                         minSize = 15, maxSize = 500) {
   if (!is.null(species) & is.null(gmtfile)) {
-    pathways <- load_patways(species)
+    pathways <- load_pathways(species)
   } else if (is.null(species) & !is.null(gmtfile)) {
     pathways <- fgsea::gmtPathways(gmtfile)
   } else {
@@ -52,7 +52,7 @@ do_gsea_pod <- function(bpn, species = "hsapiens", gmtfile = NULL,
     dplyr::select(-Significane_pvalue) %>%
     tibble::deframe()
 
-  results <- fgsea::fgsea(pathways, ranked, minSize, maxSize)
+  results <- fgsea::fgsea(pathways, ranked, minSize = minSize, maxSize = maxSize)
 
   g <- GSEAResult(
     results, pathways, lower, upper, alpha, upreg, downreg
@@ -62,3 +62,5 @@ do_gsea_pod <- function(bpn, species = "hsapiens", gmtfile = NULL,
 
   bpn
 }
+
+#TODO Create the load_pathways function
