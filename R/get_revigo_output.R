@@ -5,8 +5,10 @@
 #' @return A dataframe containing the Revigo Enrichment analysis
 #' @export
 #'
-#' @examples
+#' @import readr stringr dplyr
 #'
+#' @examples
+#' TRUE
 get_revigo_output <- function(input_data) {
   java_binary <- system.file("java", "RevigoStandalone.jar", package = "BioPathNet")
 

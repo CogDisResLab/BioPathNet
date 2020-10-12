@@ -1,13 +1,15 @@
 context("prepare_data function")
+require(tibble)
+require(dplyr)
 
-test_tbl <- tibble(Name_GeneSymbol = LETTERS,
+test_tbl <- tibble::tibble(Name_GeneSymbol = LETTERS,
                    Value_LogDiffExp = 1:26) %>%
-  arrange(desc(Value_LogDiffExp))
+  dplyr::arrange(desc(Value_LogDiffExp))
 
-test_tbl_p <- tibble(Name_GeneSymbol = LETTERS,
+test_tbl_p <- tibble::tibble(Name_GeneSymbol = LETTERS,
                    Value_LogDiffExp = 1:26,
                    Significane_pvalue = 26:1) %>%
-  arrange(desc(Value_LogDiffExp))
+  dplyr::arrange(desc(Value_LogDiffExp))
 
 t <- list(BPNList(test_tbl), BPNList(test_tbl_p))
 

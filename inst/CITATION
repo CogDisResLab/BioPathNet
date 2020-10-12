@@ -2,15 +2,22 @@ citHeader("To cite BioPathNet in publications use:")
 
 citEntry(
   entry    = "Article",
-  title    = ,
-  author   = ,
-  journal  = ,
-  year     = ,
-  volume   = ,
-  number   = ,
-  pages    = ,
-  url      = ,
+  title    = "BioPathNet Package",
+  author   = personList(
+  as.person("Ali Sajid Imami"),
+  as.person("Khaled Alganem"),
+  as.person("Marissa Smail"),
+  as.person("Xiaolu Zhang")
+  ),
+  journal  = "BMC Bioinformatics",
+  year     = "2020",
+  volume   = "999",
+  number   = "999",
+  pages    = "1--10",
+  url      = "https://example.com",
   textVersion = paste(
-
+  "Ali Sajid Imami, Khaled Alganem, Marissa Smail, Xiaolu Zhang (2020)",
+  "BioPathNet: BioPathNet Title",
+  "BMC Bioinformatics"
   )
 )

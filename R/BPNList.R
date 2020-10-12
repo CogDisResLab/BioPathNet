@@ -1,3 +1,24 @@
+#' @include classes.R
+NULL
+
+
+#' Construct a BPNList object
+#'
+#' @param input tbl_df A tibble with the differentially expressed genes
+#' @param gsea GSEAResult An object containing the GSEA results
+#' @param enrichr EnrichRResult An object containing the EnrichR results
+#' @param ilincs iLINCSResult An object containing the iLINCS results
+#' @param leading LEResult An object containing the Leading Edge Analysis results
+#' @param revigo RevigoResult An object containing the Revigo results
+#' @param integrated IntegratedResult An object containing the Integrated results
+#'
+#' @return A BPNList object
+#' @export
+#'
+#' @import methods
+#'
+#' @examples
+#' TRUE
 
 BPNList <- function(input, gsea, enrichr, ilincs, leading, revigo, integrated) {
   # Construct a BPNList object

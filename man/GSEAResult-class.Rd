@@ -21,6 +21,8 @@ This class stores the input parameters and results of the Gene Set Enrichment An
 
 \item{\code{upregulated_genes}}{tbl_df. The up-regulated genes from the input DEG tibble}
 
+\item{\code{pathways}}{tbl_df. The pathways we used, either built-in or user-supplied}
+
 \item{\code{downregulated_genes}}{tbl_df. The down-regulated genes from the input DEG tibble}
 
 \item{\code{pos_enriched}}{tbl_df. The positively enriched pathways}
@@ -44,7 +46,8 @@ This class stores the input parameters and results of the Gene Set Enrichment An
 \item{\code{num_sig_pos_enriched}}{numeric. Number of significant positively enriched pathways}
 
 \item{\code{num_sig_neg_enriched}}{numeric. Number of significant negatively enriched pathways}
-
-\item{\code{pathways}}{tbl_df. The pathways we used, either built-in or user-supplied}
 }}
 
+\examples{
+TRUE
+}

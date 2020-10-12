@@ -16,5 +16,5 @@ A dataframe containing the Revigo Enrichment analysis
 Perform Revigo enrichment analysis
 }
 \examples{
-
+TRUE
 }

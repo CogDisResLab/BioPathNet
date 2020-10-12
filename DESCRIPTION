@@ -11,3 +11,21 @@ LazyData: true
 Suggests: 
     testthat
 RoxygenNote: 7.1.1
+Imports: 
+    dplyr,
+    magrittr,
+    tibble,
+    readr,
+    stringr,
+    purrr,
+    base,
+    methods,
+    fgsea
+Collate: 
+    'classes.R'
+    'BPNList.R'
+    'GSEAResult.R'
+    'S4methods.R'
+    'do_gsea_pod.R'
+    'get_revigo_output.R'
+    'prepare_data.R'

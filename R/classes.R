@@ -1,4 +1,5 @@
-require(methods)
+#' @import methods
+NULL
 
 #' GSEAResult-class: Class storing GSEA Results
 #'
@@ -8,6 +9,7 @@ require(methods)
 #' @slot threshold_up numeric. The logfc threshold for up-regulated genes
 #' @slot threshold_down numeric. The logfc threshold for down-regulated genes
 #' @slot upregulated_genes tbl_df. The up-regulated genes from the input DEG tibble
+#' @slot pathways tbl_df. The pathways we used, either built-in or user-supplied
 #' @slot downregulated_genes tbl_df. The down-regulated genes from the input DEG tibble
 #' @slot pos_enriched tbl_df. The positively enriched pathways
 #' @slot neg_enriched tbl_df. The negatively enriched pathways
@@ -20,12 +22,13 @@ require(methods)
 #' @slot num_neg_enriched numeric. Number of negatively enriched pathways
 #' @slot num_sig_pos_enriched numeric. Number of significant positively enriched pathways
 #' @slot num_sig_neg_enriched numeric. Number of significant negatively enriched pathways
-#' @slot pathways tbl_df. The pathways we used, either built-in or user-supplied
+
 #'
 #' @return
 #' @export
 #'
 #' @examples
+#' TRUE
 setClass("GSEAResult",
          slots = c(
            alpha = "numeric", # The Alpha threshold for significance
@@ -33,7 +36,7 @@ setClass("GSEAResult",
            threshold_down = "numeric", # the logfc threshold for down-regulated genes
            upregulated_genes = "tbl_df", # The up-regulated genes from the input DEG tibble
            downregulated_genes = "tbl_df", # The down-regulated genes from the input DEG tibble
-           pathways = "tbl_df", # The pathways we used, either built-in or user-supplied
+           pathways = "list", # The pathways we used, either built-in or user-supplied
            pos_enriched = "tbl_df", # The positively enriched pathways
            neg_enriched = "tbl_df", # The negatively enriched pathways
            sig_pos_enriched = "tbl_df", # Significant positively enriched pathways
@@ -73,6 +76,7 @@ setClass("GSEAResult",
 #' @export
 #'
 #' @examples
+#' TRUE
 setClass("EnrichRResult",
          slots = c(
            alpha = "numeric", # The Alpha threshold for significance
@@ -97,26 +101,27 @@ setClass("EnrichRResult",
 #'
 #' This class stores the result of the results from iLINCS
 #'
-#' @slot threshold_up_ilincs numeric. LFC threshold for up-regulated genes
-#' @slot threshold_down_ilincs numeric. LFC threshold for down-regulated genes
-#' @slot threshold_pval_ilincs numeric. P Value threshold for genes.
+#' @slot threshold_up numeric. LFC threshold for up-regulated genes
+#' @slot threshold_down numeric. LFC threshold for down-regulated genes
+#' @slot threshold_pval numeric. P Value threshold for genes.
 #' @slot threshold_similarity numeric. Similarity threshold
 #' @slot l1000_subset tbl_df. Subset of L1000 genes in the dataset
-#' @slot upregulated_ilincs tbl_df. L1000 genes up-regulatedd in dataset
-#' @slot downregulated_ilincs tbl_df. L1000 genes down-regulated in dataset
+#' @slot upregulated_genes tbl_df. L1000 genes up-regulatedd in dataset
+#' @slot downregulated_genes tbl_df. L1000 genes down-regulated in dataset
 #' @slot ilincs_query_signature tbl_df. Complete iLINCS Query signature
-#' @slot all_perturbagens_ilincs tbl_df. Complete list returned from iLINCS of perturbagens
-#' @slot filtered_perturbagens_ilincs tbl_df. Filtered list of perturbagens by the similarity threshold
+#' @slot all_perturbagens tbl_df. Complete list returned from iLINCS of perturbagens
+#' @slot filtered_perturbagens tbl_df. Filtered list of perturbagens by the similarity threshold
 #' @slot num_genes_l1000 numeric. Number of L1000 genes in dataset
-#' @slot num_genes_upregulated_ilincs numeric. Number of up-regulated L1000 genes in dataset
-#' @slot num_genes_downregulated_ilincs numeric. Number of down-regulated L1000 genes in dataset
-#' @slot num_all_perturbagens_ilincs numeric. Number of all perturbagens returned by iLINCS
-#' @slot num_filtered_perturbagens_ilincs numeric. Number of filtered perturbagens returned by iLINCS
+#' @slot num_genes_upregulated numeric. Number of up-regulated L1000 genes in dataset
+#' @slot num_genes_downregulated numeric. Number of down-regulated L1000 genes in dataset
+#' @slot num_all_perturbagens numeric. Number of all perturbagens returned by iLINCS
+#' @slot num_filtered_perturbagens numeric. Number of filtered perturbagens returned by iLINCS
 #'
 #' @return
 #' @export
 #'
 #' @examples
+#' TRUE
 setClass("iLINCSResult",
          slots = c(
            threshold_up = "numeric", # LFC threshold for up-regulated genes
@@ -136,16 +141,45 @@ setClass("iLINCSResult",
            num_filtered_perturbagens = "numeric" # Number of filtered perturbagens returned by iLINCS
          ))
 
+#' LEResult-class: Class containing Leading Edge Analysis results
+#'
+#' @slot placeholder numeric.
+#'
+#' @return
+#' @export
+#'
+#' @examples
+#' TRUE
+
 setClass("LEResult",
          slots = c(
            placeholder = "numeric"
          ))
+
+#' RevigoResult-class: Class containing results from Revigo
+#'
+#' @slot placeholder numeric.
+#'
+#' @return
+#' @export
+#'
+#' @examples
+#' TRUE
 
 setClass("RevigoResult",
          slots = c(
            placeholder = "numeric"
          ))
 
+#' IntegratedResult-class: Class containing Integrated results
+#'
+#' @slot placeholder numeric.
+#'
+#' @return
+#' @export
+#'
+#' @examples
+#' TRUE
 setClass("IntegratedResult",
          slots = c(
            placeholder = "numeric"
@@ -169,6 +203,7 @@ setClass("IntegratedResult",
 #' @export
 #'
 #' @examples
+#' TRUE
 setClass("BPNList",
          slots = c(
            input = "tbl_df",
