@@ -18,6 +18,10 @@ Integrated Results: \t\t{ifelse(is_empty(object@integrated@placeholder), \"Analy
             invisible(NULL)
           })
 
+setGeneric("input", function(object, ...) {standardGeneric("input")})
+setMethod("input", "BPNList",
+          function(object) {object@input})
+
 setGeneric("gsea", function(object, ...) {standardGeneric("gsea")})
 setMethod("gsea", "BPNList",
           function(object) {object@gsea})
