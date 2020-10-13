@@ -27,3 +27,6 @@ GSEAResult(results, pathways, lower, upper, alpha, upreg, downreg)
 \description{
 Construct a GSEAResult Object
 }
+\examples{
+TRUE
+}
