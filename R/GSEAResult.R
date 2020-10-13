@@ -70,7 +70,8 @@ GSEAResult <- function(results, pathways, lower, upper, alpha, upreg, downreg) {
            num_pos_enriched = num_pos_enriched,
            num_neg_enriched = num_neg_enriched,
            num_sig_pos_enriched = num_sig_pos_enriched,
-           num_sig_neg_enriched = num_sig_neg_enriched
+           num_sig_neg_enriched = num_sig_neg_enriched,
+           empty = FALSE
            )
 
   g

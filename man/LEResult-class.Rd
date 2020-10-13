@@ -14,6 +14,8 @@ LEResult-class: Class containing Leading Edge Analysis results
 
 \describe{
 \item{\code{placeholder}}{numeric.}
+
+\item{\code{empty}}{logical. A simple check for whether or not the object is empty}
 }}
 
 \examples{

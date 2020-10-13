@@ -22,7 +22,7 @@ NULL
 #' @slot num_neg_enriched numeric. Number of negatively enriched pathways
 #' @slot num_sig_pos_enriched numeric. Number of significant positively enriched pathways
 #' @slot num_sig_neg_enriched numeric. Number of significant negatively enriched pathways
-
+#' @slot empty logical. A simple check for whether or not the object is empty
 #'
 #' @return
 #' @export
@@ -47,7 +47,8 @@ setClass("GSEAResult",
            num_pos_enriched = "numeric", # Number of positively enriched pathways
            num_neg_enriched = "numeric", # Number of negatively enriched pathways
            num_sig_pos_enriched = "numeric", # Number of significant positively enriched pathways
-           num_sig_neg_enriched = "numeric" # Number of significant negatively enriched pathways
+           num_sig_neg_enriched = "numeric", # Number of significant negatively enriched pathways
+           empty = "logical"
          ))
 
 
@@ -71,6 +72,7 @@ setClass("GSEAResult",
 #' @slot num_down_enrichr numeric. Number of enriched pathways in down-regulated genes
 #' @slot num_sig_up_enrichr numeric. Number of significant enriched pathways in up-regulated genes
 #' @slot num_sig_down_enrichr numeric. Number of significant enriched pathways in down-regulated genes
+#' @slot empty logical. A simple check for whether or not the object is empty
 #'
 #' @return
 #' @export
@@ -94,7 +96,8 @@ setClass("EnrichRResult",
            num_up_enrichr = "numeric", # Number of enriched pathways in up-regulated genes
            num_down_enrichr = "numeric", # Number of enriched pathways in down-regulated genes
            num_sig_up_enrichr = "numeric", # Number of significant enriched pathways in up-regulated genes
-           num_sig_down_enrichr = "numeric" # Number of significant enriched pathways in down-regulated genes
+           num_sig_down_enrichr = "numeric", # Number of significant enriched pathways in down-regulated genes
+           empty = "logical"
          ))
 
 #' iLINCSResult-class: Class storing iLINCS Results
@@ -116,6 +119,7 @@ setClass("EnrichRResult",
 #' @slot num_genes_downregulated numeric. Number of down-regulated L1000 genes in dataset
 #' @slot num_all_perturbagens numeric. Number of all perturbagens returned by iLINCS
 #' @slot num_filtered_perturbagens numeric. Number of filtered perturbagens returned by iLINCS
+#' @slot empty logical. A simple check for whether or not the object is empty
 #'
 #' @return
 #' @export
@@ -138,12 +142,14 @@ setClass("iLINCSResult",
            num_genes_upregulated = "numeric", # Number of up-regulated L1000 genes in dataset
            num_genes_downregulated = "numeric", # Number of down-regulated L1000 genes in dataset
            num_all_perturbagens = "numeric", # Number of all perturbagens returned by iLINCS
-           num_filtered_perturbagens = "numeric" # Number of filtered perturbagens returned by iLINCS
+           num_filtered_perturbagens = "numeric", # Number of filtered perturbagens returned by iLINCS
+           empty = "logical"
          ))
 
 #' LEResult-class: Class containing Leading Edge Analysis results
 #'
 #' @slot placeholder numeric.
+#' @slot empty logical. A simple check for whether or not the object is empty
 #'
 #' @return
 #' @export
@@ -153,12 +159,14 @@ setClass("iLINCSResult",
 
 setClass("LEResult",
          slots = c(
-           placeholder = "numeric"
+           placeholder = "numeric",
+           empty = "logical"
          ))
 
 #' RevigoResult-class: Class containing results from Revigo
 #'
 #' @slot placeholder numeric.
+#' @slot empty logical. A simple check for whether or not the object is empty
 #'
 #' @return
 #' @export
@@ -168,12 +176,14 @@ setClass("LEResult",
 
 setClass("RevigoResult",
          slots = c(
-           placeholder = "numeric"
+           placeholder = "numeric",
+           empty = "logical"
          ))
 
 #' IntegratedResult-class: Class containing Integrated results
 #'
 #' @slot placeholder numeric.
+#' @slot empty logical. A simple check for whether or not the object is empty
 #'
 #' @return
 #' @export
@@ -182,7 +192,8 @@ setClass("RevigoResult",
 #' TRUE
 setClass("IntegratedResult",
          slots = c(
-           placeholder = "numeric"
+           placeholder = "numeric",
+           empty = "logical"
          ))
 
 #' BPNList-class: The BioPathNet Core Class

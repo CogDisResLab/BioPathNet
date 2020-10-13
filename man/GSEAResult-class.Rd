@@ -46,6 +46,8 @@ This class stores the input parameters and results of the Gene Set Enrichment An
 \item{\code{num_sig_pos_enriched}}{numeric. Number of significant positively enriched pathways}
 
 \item{\code{num_sig_neg_enriched}}{numeric. Number of significant negatively enriched pathways}
+
+\item{\code{empty}}{logical. A simple check for whether or not the object is empty}
 }}
 
 \examples{
