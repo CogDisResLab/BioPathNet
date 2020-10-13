@@ -17,6 +17,7 @@ NULL
 #' @import dplyr tibble
 #'
 #' @examples
+#' TRUE
 GSEAResult <- function(results, pathways, lower, upper, alpha, upreg, downreg) {
 
   alpha <- alpha
