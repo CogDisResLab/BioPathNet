@@ -2,8 +2,10 @@
 #' @import stringr methods
 NULL
 
+
+# Methods for BPNList
 setMethod("show",
-          signature = c("BPNList"),
+          signature = "BPNList",
           definition = function(object) {
             print(
               stringr::str_glue("
@@ -46,4 +48,58 @@ setMethod("enrichr<-", "BPNList",
             if (validObject(object)) {
               return(object)
             }
+          })
+
+# Methods for GSEAResult
+
+setMethod("initialize",
+          "GSEAResult",
+          function(.Object, ...) {
+            .Object@empty <- TRUE
+            .Object
+          })
+
+# Methods for EnrichRResult
+
+setMethod("initialize",
+          "EnrichRResult",
+          function(.Object, ...) {
+            .Object@empty <- TRUE
+            .Object
+          })
+
+# Methods for iLINCSResult
+
+setMethod("initialize",
+          "iLINCSResult",
+          function(.Object, ...) {
+            .Object@empty <- TRUE
+            .Object
+          })
+
+# Methods for LEResult
+
+setMethod("initialize",
+          "LEResult",
+          function(.Object, ...) {
+            .Object@empty <- TRUE
+            .Object
+          })
+
+# Methods for RevigoResult
+
+setMethod("initialize",
+          "RevigoResult",
+          function(.Object, ...) {
+            .Object@empty <- TRUE
+            .Object
+          })
+
+# Methods for IntegratedResult
+
+setMethod("initialize",
+          "IntegratedResult",
+          function(.Object, ...) {
+            .Object@empty <- TRUE
+            .Object
           })

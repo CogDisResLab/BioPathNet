@@ -42,6 +42,8 @@ This class stores the result of the results from iLINCS
 \item{\code{num_all_perturbagens}}{numeric. Number of all perturbagens returned by iLINCS}
 
 \item{\code{num_filtered_perturbagens}}{numeric. Number of filtered perturbagens returned by iLINCS}
+
+\item{\code{empty}}{logical. A simple check for whether or not the object is empty}
 }}
 
 \examples{
