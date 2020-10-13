@@ -1,11 +1,14 @@
 #' Perform the EnrichR Analysis
 #'
-#' @param bpn
-#' @param alpha
-#' @param lower
-#' @param upper
+#' This function takes in a BPNList object and returns a BPNList object with the
+#' enrichr slot updated with process EnrichR Results
 #'
-#' @return
+#' @param bpn BPNList An object of class BPNList created from \link{prepare_data}
+#' @param alpha numeric The Alpha value for statistical significance. Defaults to 0.05.
+#' @param lower numeric The cutoff for down-regulated genes. If not specified, it takes the bottom 10% of the
+#' @param upper numeric The cutoff for up-regulated genes. If not specified, it takes the top 10% of the dataset
+#'
+#' @return An object of class BPNList with its enrichr slot populated with the results
 #' @export
 #'
 #' @import purrr dplyr enrichR
