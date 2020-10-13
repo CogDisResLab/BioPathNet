@@ -9,10 +9,11 @@
 #' @export
 #'
 #' @import purrr dplyr enrichR
-#'
 #' @examples
 #' TRUE
 do_enrichr_pod <- function(bpn, alpha = 0.05, lower = NULL, upper = NULL) {
+
+  inp <- input(bpn)
 
   if (is.null(lower)) {
     lower <- round(quantile(inp$Value_LogDiffExp, 0.10))
@@ -21,8 +22,6 @@ do_enrichr_pod <- function(bpn, alpha = 0.05, lower = NULL, upper = NULL) {
   if (is.null(upper)) {
     upper <- round(quantile(inp$Value_LogDiffExp, 0.90))
   }
-
-  inp <- bpn@input
 
   dbs <- c("GO_Biological_Process_2018",
            "GO_Molecular_Function_2018",
@@ -37,6 +36,10 @@ do_enrichr_pod <- function(bpn, alpha = 0.05, lower = NULL, upper = NULL) {
 
   downreg <- inp %>%
     filter(Value_LogDiffExp < lower)
+
+  #TODO Make a test for enrichR being live here
+  options(enrichR.base.address = "http://amp.pharm.mssm.edu/Enrichr/")
+  options(enrichR.live = TRUE)
 
   up_enrichr <- upreg %>%
     pull(Name_GeneSymbol) %>%
