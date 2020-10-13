@@ -11,11 +11,11 @@ setMethod("show",
               stringr::str_glue("
 An Object of class {class(object)}
 Input Size: \t\t\t{nrow(object@input)} Differentially Expressed Genes
-GSEA Results: \t\t\t{ifelse(is_empty(object@gsea@alpha), \"Analysis Not Run\",\"Analysis Completed\")}
-EnrichR Results: \t\t{ifelse(is_empty(object@enrichr@alpha), \"Analysis Not Run\",\"Analysis Completed\")}
-iLINCS Results: \t\t{ifelse(is_empty(object@ilincs@threshold_pval), \"Analysis Not Run\",\"Analysis Completed\")}
-Leading Edge Results: \t\t{ifelse(is_empty(object@leading@placeholder), \"Analysis Not Run\",\"Analysis Completed\")}
-Integrated Results: \t\t{ifelse(is_empty(object@integrated@placeholder), \"Analysis Not Run\",\"Analysis Completed\")}\n")
+GSEA Results: \t\t\t{ifelse(object@gsea@empty, \"Analysis Not Run\",\"Analysis Completed\")}
+EnrichR Results: \t\t{ifelse(object@enrichr@empty), \"Analysis Not Run\",\"Analysis Completed\")}
+iLINCS Results: \t\t{ifelse(object@ilincs@empty), \"Analysis Not Run\",\"Analysis Completed\")}
+Leading Edge Results: \t\t{ifelse(object@leading@empty), \"Analysis Not Run\",\"Analysis Completed\")}
+Integrated Results: \t\t{ifelse(object@integrated@empty), \"Analysis Not Run\",\"Analysis Completed\")}\n")
             )
             invisible(NULL)
           })
