@@ -31,7 +31,7 @@ do_gsea_pod <- function(bpn, species = "hsapiens", gmtfile = NULL,
     stop("please specify only one of species and gmtfile")
   }
 
-  inp <- bpn@input
+  inp <- input(bpn)
 
   if (is.null(lower)) {
     lower <- round(quantile(inp$Value_LogDiffExp, 0.10))
