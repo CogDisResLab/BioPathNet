@@ -1,16 +1,16 @@
 #' @include classes.R
 NULL
 
-#' Title
+#' Construct an EnrichRResult object
 #'
-#' @param up_results
-#' @param down_results
-#' @param upreg
-#' @param downreg
-#' @param alpha
-#' @param upper
-#' @param lower
-#' @param dbs
+#' @param up_results tbl_df A tibble of enrichment results from the upregulated genes
+#' @param down_results tbl_df A tibble of enrichment results from the upregulated genes
+#' @param upreg tbl_df A tibble of up-regulated genes
+#' @param downreg tbl_df A tibble of down-regulated genes
+#' @param lower numeric Lower threshold for down-regulated genes
+#' @param upper numeric Upper threshold for up-regulated genes
+#' @param alpha numeric Alpha level of significance
+#' @param dbs character a vector of the databases used for the enrichment analysis
 #'
 #' @return
 #' @export
