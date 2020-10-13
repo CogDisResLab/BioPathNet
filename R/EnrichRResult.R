@@ -71,7 +71,8 @@ EnrichRResult <- function(up_results, down_results, upreg, downreg, alpha, upper
            num_up_enrichr = num_up_enrichr,
            num_down_enrichr = num_down_enrichr,
            num_sig_up_enrichr = num_sig_up_enrichr,
-           num_sig_down_enrichr = num_sig_down_enrichr
+           num_sig_down_enrichr = num_sig_down_enrichr,
+           empty = FALSE
   )
 
   e
