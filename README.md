@@ -13,6 +13,7 @@ issues](https://img.shields.io/github/issues/AliSajid/BioPathNet)](https://githu
 forks](https://img.shields.io/github/forks/AliSajid/BioPathNet)](https://github.com/AliSajid/BioPathNet/network)
 [![GitHub
 stars](https://img.shields.io/github/stars/AliSajid/BioPathNet)](https://github.com/AliSajid/BioPathNet/stargazers)
+![Travis-CI](https://img.shields.io/travis/com/AliSajid/BioPathNet)
 
 ![GitHub release (latest SemVer including
 pre-releases)](https://img.shields.io/github/v/release/AliSajid/BioPathNet?include_prereleases&label=latest-release)

@@ -1,14 +1,19 @@
 languge: r
 
 r:
-  - oldrel
   - release
   - devel
   - bioc-devel
   - bioc-release
 
+cache:
+  directories:
+  - $HOME/.local/share/renv
+  - $TRAVIS_BUILD_DIR/renv/library
+
 install:
   - R -e "renv::restore()"
+  - R -e "install.packages('devtools')"
 
 script:
   - R -e "devtools::check()"
