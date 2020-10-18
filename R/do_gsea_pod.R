@@ -1,3 +1,16 @@
+#' Load Pathways data
+#'
+#' @param species The species. Can be hsapiens,  mmusculus or rnorvegicus
+#'
+#' @return The loaded pathways
+#' @export
+#'
+#' @examples
+load_pathways <- function(species) {
+  0
+}
+
+
 #' Perform the Geneset Enrichment Analysis
 #'
 #' This function takes a BPNList object and performs a Geneset Enrichment Analysis

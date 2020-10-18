@@ -53,13 +53,13 @@ do_enrichr_pod <- function(bpn, alpha = 0.05, lower = NULL, upper = NULL) {
 
   up_enrichr <- upreg %>%
     pull(.data$Name_GeneSymbol) %>%
-    enrichR::enrichr(., dbs) %>%
+    enrichR::enrichr(.data, dbs) %>%
     map2(columns, ~ mutate(.x, namespace = .y)) %>%
     bind_rows
 
   down_enrichr <- downreg %>%
     pull(.data$Name_GeneSymbol) %>%
-    enrichR::enrichr(., dbs) %>%
+    enrichR::enrichr(.data, dbs) %>%
     map2(columns, ~ mutate(.x, namespace = .y)) %>%
     bind_rows
 
