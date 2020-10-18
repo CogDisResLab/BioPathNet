@@ -25,4 +25,4 @@ script:
   - R -e "devtools::check()"
 
 after_success:
-  - Rscript -e 'covr::codecov()'
+  - Rscript -e 'covr::codecov(token = "4d92fd8f-5d2c-4e6c-839f-e2260a5bd3a1")'
