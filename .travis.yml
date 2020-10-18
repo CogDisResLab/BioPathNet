@@ -11,6 +11,11 @@ cache:
   - $HOME/.local/share/renv
   - $TRAVIS_BUILD_DIR/renv/library
 
+notifications:
+  slack:
+    rooms:
+	  - cognitivediso-4tq7056:brFd4sbtS9GoLSjYuyoHuAus#biopathnet
+
 install:
   - R -e "renv::restore()"
   - R -e "install.packages('devtools')"
