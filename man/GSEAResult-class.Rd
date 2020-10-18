@@ -5,7 +5,7 @@
 \alias{GSEAResult-class}
 \title{GSEAResult-class: Class storing GSEA Results}
 \value{
-
+an object of class GSEAResult
 }
 \description{
 This class stores the input parameters and results of the Gene Set Enrichment Analysis.

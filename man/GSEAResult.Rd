@@ -22,7 +22,7 @@ GSEAResult(results, pathways, lower, upper, alpha, upreg, downreg)
 \item{downreg}{tbl_df A tibble of down-regulated genes}
 }
 \value{
-
+an object of class GSEAResult
 }
 \description{
 Construct a GSEAResult Object

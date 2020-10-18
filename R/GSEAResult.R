@@ -11,10 +11,11 @@ NULL
 #' @param upreg tbl_df A tibble of up-regulated genes
 #' @param downreg tbl_df A tibble of down-regulated genes
 #'
-#' @return
+#' @return an object of class GSEAResult
 #' @export
 #'
 #' @import dplyr tibble
+#' @importFrom rlang .data
 #'
 #' @examples
 #' TRUE
@@ -27,23 +28,23 @@ GSEAResult <- function(results, pathways, lower, upper, alpha, upreg, downreg) {
   downregulated_genes <- downreg
 
   pos_enriched <- results %>%
-    dplyr::filter(ES > 0) %>%
-    dplyr::arrange(desc(ES), pval) %>%
+    dplyr::filter(.data$ES > 0) %>%
+    dplyr::arrange(desc(.data$ES), .data$pval) %>%
     tibble::tibble()
 
   neg_enriched <- results %>%
-    dplyr::filter(ES < 0) %>%
-    dplyr::arrange(desc(ES), pval) %>%
+    dplyr::filter(.data$ES < 0) %>%
+    dplyr::arrange(desc(.data$ES), .data$pval) %>%
     tibble::tibble()
 
   sig_pos_enriched <- pos_enriched %>%
-    dplyr::filter(pval < alpha) %>%
-    dplyr::arrange(desc(ES), pval) %>%
+    dplyr::filter(.data$pval < alpha) %>%
+    dplyr::arrange(desc(.data$ES), .data$pval) %>%
     tibble::tibble()
 
   sig_neg_enriched <- neg_enriched %>%
-    dplyr::filter(pval < alpha) %>%
-    dplyr::arrange(desc(ES), pval) %>%
+    dplyr::filter(.data$pval < alpha) %>%
+    dplyr::arrange(desc(.data$ES), .data$pval) %>%
     tibble::tibble()
 
   num_tested <- nrow(results)

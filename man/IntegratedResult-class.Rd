@@ -5,7 +5,7 @@
 \alias{IntegratedResult-class}
 \title{IntegratedResult-class: Class containing Integrated results}
 \value{
-
+and object of class IntegratedResults
 }
 \description{
 IntegratedResult-class: Class containing Integrated results

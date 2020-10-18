@@ -24,7 +24,7 @@ NULL
 #' @slot num_sig_neg_enriched numeric. Number of significant negatively enriched pathways
 #' @slot empty logical. A simple check for whether or not the object is empty
 #'
-#' @return
+#' @return an object of class GSEAResult
 #' @export
 #'
 #' @examples
@@ -74,7 +74,7 @@ setClass("GSEAResult",
 #' @slot num_sig_down_enrichr numeric. Number of significant enriched pathways in down-regulated genes
 #' @slot empty logical. A simple check for whether or not the object is empty
 #'
-#' @return
+#' @return an object of class EnrichRResult
 #' @export
 #'
 #' @examples
@@ -151,7 +151,7 @@ setClass("iLINCSResult",
 #' @slot placeholder numeric.
 #' @slot empty logical. A simple check for whether or not the object is empty
 #'
-#' @return
+#' @return an object of class LEResult
 #' @export
 #'
 #' @examples
@@ -168,7 +168,7 @@ setClass("LEResult",
 #' @slot placeholder numeric.
 #' @slot empty logical. A simple check for whether or not the object is empty
 #'
-#' @return
+#' @return and object of class RevigoResult
 #' @export
 #'
 #' @examples
@@ -185,7 +185,7 @@ setClass("RevigoResult",
 #' @slot placeholder numeric.
 #' @slot empty logical. A simple check for whether or not the object is empty
 #'
-#' @return
+#' @return and object of class IntegratedResults
 #' @export
 #'
 #' @examples
@@ -210,7 +210,7 @@ setClass("IntegratedResult",
 #' @slot revigo RevigoResult. An instance of \link{RevigoResult-class} class storing the results Revigo Analysis
 #' @slot integrated IntegratedResult. An instance of \link{IntegratedResult-class} class storing the results after integrating the three components
 #'
-#' @return
+#' @return An object of class BPNList
 #' @export
 #'
 #' @examples

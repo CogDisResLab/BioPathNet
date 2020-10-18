@@ -5,3 +5,4 @@
 ^README\.Rmd$
 ^archive$
 ^LICENSE\.md$
+^.travis.yml$

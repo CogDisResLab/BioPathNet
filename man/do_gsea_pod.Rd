@@ -22,9 +22,9 @@ do_gsea_pod(
 
 \item{gmtfile}{character A full path to a GMT File you would like to use. Cannot be specified along with species}
 
-\item{lower}{numeric The cutoff for down-regulated genes. If not specified, it takes the bottom 10% of the dataset}
+\item{lower}{numeric The cutoff for down-regulated genes. If not specified, it takes the bottom 10\% of the dataset}
 
-\item{upper}{numeric The cutoff for up-regulated genes. If not specified, it takes the top 10% of the dataset}
+\item{upper}{numeric The cutoff for up-regulated genes. If not specified, it takes the top 10\% of the dataset}
 
 \item{alpha}{numeric The Alpha value for statistical significance. Defaults to 0.05.}
 
@@ -36,6 +36,10 @@ do_gsea_pod(
 An object of class BPNList with its gsea slot populated with the results
 }
 \description{
+This function takes a BPNList object and performs a Geneset Enrichment Analysis
+and returns a BPNList object with the results of the GSEA
+}
+\details{
 This function takes a BPNList object and performs a Geneset Enrichment Analysis
 and returns a BPNList object with the results of the GSEA
 }

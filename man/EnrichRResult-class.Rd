@@ -5,7 +5,7 @@
 \alias{EnrichRResult-class}
 \title{EnrichRResult-class: Class storing EnrichR Results}
 \value{
-
+an object of class EnrichRResult
 }
 \description{
 This class stores the input parameters and results of the Gene Set Enrichment Analysis.

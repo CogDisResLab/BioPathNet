@@ -4,7 +4,6 @@ dist: xenial
 
 r:
   - release
-  - devel
   - bioc-devel
   - bioc-release
 

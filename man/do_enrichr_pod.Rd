@@ -11,9 +11,9 @@ do_enrichr_pod(bpn, alpha = 0.05, lower = NULL, upper = NULL)
 
 \item{alpha}{numeric The Alpha value for statistical significance. Defaults to 0.05.}
 
-\item{lower}{numeric The cutoff for down-regulated genes. If not specified, it takes the bottom 10% of the}
+\item{lower}{numeric The cutoff for down-regulated genes. If not specified, it takes the bottom 10\% of the}
 
-\item{upper}{numeric The cutoff for up-regulated genes. If not specified, it takes the top 10% of the dataset}
+\item{upper}{numeric The cutoff for up-regulated genes. If not specified, it takes the top 10\% of the dataset}
 }
 \value{
 An object of class BPNList with its enrichr slot populated with the results
@@ -21,6 +21,10 @@ An object of class BPNList with its enrichr slot populated with the results
 \description{
 This function takes in a BPNList object and returns a BPNList object with the
 enrichr slot updated with process EnrichR Results
+}
+\details{
+This function takes in a BPNList object and returns a BPNList object with the
+enrichr slot updated with process EnrichR Results.
 }
 \examples{
 TRUE
