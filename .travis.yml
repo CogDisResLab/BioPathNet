@@ -1,0 +1,14 @@
+languge: r
+
+r:
+  - oldrel
+  - release
+  - devel
+  - bioc-devel
+  - bioc-release
+
+install:
+  - R -e "renv::restore()"
+
+script:
+  - R -e "devtools::check()"
