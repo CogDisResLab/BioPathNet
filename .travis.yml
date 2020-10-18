@@ -1,4 +1,6 @@
-languge: r
+language: r
+dist: xenial
+os: linux
 
 r:
   - release
