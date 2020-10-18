@@ -12,10 +12,11 @@ NULL
 #' @param alpha numeric Alpha level of significance
 #' @param dbs character a vector of the databases used for the enrichment analysis
 #'
-#' @return
+#' @return an object of class EnrichRResult
 #' @export
 #'
 #' @import enrichR dplyr tibble
+#' @importFrom rlang .data
 #'
 #' @examples
 #' TRUE
@@ -41,11 +42,11 @@ EnrichRResult <- function(up_results, down_results, upreg, downreg, alpha, upper
     tibble::tibble()
 
   sig_up_enrichr <- up_enrichr %>%
-    dplyr::filter(P.value < alpha) %>%
+    dplyr::filter(.data$P.value < alpha) %>%
     tibble::tibble()
 
   sig_down_enrichr <- down_enrichr %>%
-    dplyr::filter(P.value < alpha) %>%
+    dplyr::filter(.data$P.value < alpha) %>%
     tibble::tibble()
 
   num_upreg <- nrow(upreg)

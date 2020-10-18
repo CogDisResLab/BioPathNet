@@ -5,7 +5,7 @@
 \alias{RevigoResult-class}
 \title{RevigoResult-class: Class containing results from Revigo}
 \value{
-
+and object of class RevigoResult
 }
 \description{
 RevigoResult-class: Class containing results from Revigo

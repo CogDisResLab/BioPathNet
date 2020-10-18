@@ -33,7 +33,7 @@ EnrichRResult(
 \item{dbs}{character a vector of the databases used for the enrichment analysis}
 }
 \value{
-
+an object of class EnrichRResult
 }
 \description{
 Construct an EnrichRResult object

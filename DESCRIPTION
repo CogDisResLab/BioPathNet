@@ -12,7 +12,6 @@ Suggests:
     testthat
 RoxygenNote: 7.1.1
 Imports: 
-    dplyr,
     magrittr,
     tibble,
     readr,
@@ -21,7 +20,10 @@ Imports:
     base,
     methods,
     fgsea,
-    enrichR
+    enrichR,
+    rlang,
+    stats,
+    dplyr,
 Collate: 
     'classes.R'
     'BPNList.R'

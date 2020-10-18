@@ -1,5 +1,6 @@
 #' @include classes.R
 #' @import tibble dplyr purrr
+#' @importFrom rlang .data
 NULL
 
 conditional_dataset <- function(genes, logfc, pvalues = NULL) {
@@ -16,7 +17,7 @@ conditional_dataset <- function(genes, logfc, pvalues = NULL) {
   }
 
   out <- dataset %>%
-    dplyr::arrange(desc(Value_LogDiffExp))
+    dplyr::arrange(desc(.data$Value_LogDiffExp))
 
   out
 }

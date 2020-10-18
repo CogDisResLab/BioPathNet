@@ -6,6 +6,7 @@
 #' @export
 #'
 #' @import readr stringr dplyr
+#' @importFrom rlang .data
 #'
 #' @examples
 #' TRUE
@@ -24,13 +25,13 @@ get_revigo_output <- function(input_data) {
     stringr::str_c(output, collapse = "\n"),
     skip = 2
   ) %>%
-    dplyr::rename(namespace = `%namespace`) %>%
-    dplyr::select(namespace, term_ID, description,
-                  frequency, `log10_p-value`, uniqueness,
-                  dispensability, representative) %>%
+    dplyr::rename(namespace = .data$`%namespace`) %>%
+    dplyr::select(.data$namespace, .data$term_ID, .data$description,
+                  .data$frequency, .data$`log10_p-value`, .data$uniqueness,
+                  .data$dispensability, .data$representative) %>%
     dplyr::rename_with(stringr::str_to_title) %>%
-    dplyr::rename(GOID = Term_id,
-                  Log10_pval = `Log10_p-Value`)
+    dplyr::rename(GOID = .data$Term_id,
+                  Log10_pval = .data$`Log10_p-Value`)
 
   return(output_df)
 }

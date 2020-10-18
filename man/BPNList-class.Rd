@@ -5,7 +5,7 @@
 \alias{BPNList-class}
 \title{BPNList-class: The BioPathNet Core Class}
 \value{
-
+An object of class BPNList
 }
 \description{
 This class takes care of the entire analysis infrastructure of the BioPathNet analysis.

@@ -5,7 +5,7 @@
 \alias{LEResult-class}
 \title{LEResult-class: Class containing Leading Edge Analysis results}
 \value{
-
+an object of class LEResult
 }
 \description{
 LEResult-class: Class containing Leading Edge Analysis results
