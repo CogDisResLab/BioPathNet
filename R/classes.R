@@ -121,7 +121,7 @@ setClass("EnrichRResult",
 #' @slot num_filtered_perturbagens numeric. Number of filtered perturbagens returned by iLINCS
 #' @slot empty logical. A simple check for whether or not the object is empty
 #'
-#' @return
+#' @return an object of class iLINCSResult
 #' @export
 #'
 #' @examples

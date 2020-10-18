@@ -5,7 +5,7 @@
 \alias{iLINCSResult-class}
 \title{iLINCSResult-class: Class storing iLINCS Results}
 \value{
-
+an object of class iLINCSResult
 }
 \description{
 This class stores the result of the results from iLINCS
