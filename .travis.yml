@@ -19,7 +19,7 @@ notifications:
 
 install:
   - R -e "renv::restore()"
-  - R -e "install.packages(c('devtools', covr))"
+  - R -e "install.packages(c('devtools', 'covr'))"
 
 script:
   - R -e "devtools::check()"
