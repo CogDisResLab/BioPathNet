@@ -7,7 +7,7 @@
 #'
 #' @examples
 load_pathways <- function(species) {
-  0
+  data(species)
 }
 
 
@@ -81,5 +81,3 @@ do_gsea_pod <- function(bpn, species = "hsapiens", gmtfile = NULL,
 
   bpn
 }
-
-#TODO Create the load_pathways function
