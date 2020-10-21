@@ -34,3 +34,5 @@ Collate:
     'do_gsea_pod.R'
     'get_revigo_output.R'
     'prepare_data.R'
+Depends: 
+    R (>= 2.10)
