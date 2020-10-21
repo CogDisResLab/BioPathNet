@@ -15,7 +15,7 @@ cache:
 notifications:
   slack:
     rooms:
-      - cognitivediso-4tq7056:brFd4sbtS9GoLSjYuyoHuAus#biopathnet
+      - secure: "GY3R4KIwe0KYv0h/PkWXXV7+DIuNqY4EH6L6DqYtkHGemEWogg5sm/fPDX+CMD96zsnaC0ipbfkniglkR5awIE9G3ylffR7TEJNbLXMtIIkfmAfUUOF9cJyR41EUIsjJoD1mDVgo6mdfi4pmTCCdVZ6Aqe8hpnN7QfRMqRF4/RZMfdeqxDsa02zxpASk77Biyn+qOpMsSz1IUYk/urRgFoal+5o9ocrw6zkQYdn7w/z7kamV8ffF0o0PxMaXyokKCvN1AkKnDCZa8Ko9ynn+adaYgiWLU3HxMIHwwtqH36QN8UhiByXMU1DT61QCQopn6nebf6EqHbWhW2KpgB+F4C72oTxOfI0DVc+YRnsJ2JP+NKojZNWkmzlUhLNTyJT9jeoYfzLucQR7XqtSqwuGX8DGKVzDMO3kGvGB5Z1L1MFacTRtJykVPkHmVTs8mMsMWwITB1I3DYMEKeh8bOD6MsXHGtF+1KgJ8h/Tu10i4ewWX5S2UwjafZa+iiePbT22leG9nFxTkieY9mzO2lPbwwf0q3xNZHTMep9dhGbn+5MMcb5V9pq93ntG2zCzVtfECjIFxrTpXI3bsKi7Ln6AGEMWIVP/Rk2q+yIKlkca7yF0kGLG4cNRVRp5zDUHy3YtAZtSFw8QUu9uqSms28q72GCaynU8/LyUIAzsrDwRjx0="
 
 install:
   - R -e "renv::restore()"
