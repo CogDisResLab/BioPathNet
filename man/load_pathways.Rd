@@ -12,7 +12,7 @@ load_pathways(species)
 \value{
 The loaded pathways
 
-importFrom("utils", "data")
+importFrom utils data
 }
 \description{
 Load Pathways data
