@@ -30,6 +30,7 @@ Collate:
     'EnrichRResult.R'
     'GSEAResult.R'
     'S4methods.R'
+    'data.R'
     'do_enrichr_pod.R'
     'do_gsea_pod.R'
     'get_revigo_output.R'
