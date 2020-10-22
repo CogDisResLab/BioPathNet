@@ -3,11 +3,13 @@
 #' @param species The species. Can be hsapiens,  mmusculus or rnorvegicus
 #'
 #' @return The loaded pathways
-#' @export
+#'
+#'importFrom utils data
 #'
 #' @examples
+#' TRUE
 load_pathways <- function(species) {
-  data(species)
+  utils::data(species)
 }
 
 
