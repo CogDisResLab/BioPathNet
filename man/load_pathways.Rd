@@ -11,7 +11,12 @@ load_pathways(species)
 }
 \value{
 The loaded pathways
+
+importFrom("utils", "data")
 }
 \description{
 Load Pathways data
+}
+\examples{
+TRUE
 }
