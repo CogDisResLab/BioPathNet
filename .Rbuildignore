@@ -6,3 +6,4 @@
 ^archive$
 ^LICENSE\.md$
 ^.travis.yml$
+^data-raw$
