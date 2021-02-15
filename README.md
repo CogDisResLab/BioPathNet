@@ -14,7 +14,6 @@ forks](https://img.shields.io/github/forks/AliSajid/BioPathNet)](https://github.
 stars](https://img.shields.io/github/stars/AliSajid/BioPathNet)](https://github.com/AliSajid/BioPathNet/stargazers)
 [![R build
 status](https://github.com/AliSajid/BioPathNet/workflows/R-CMD-check/badge.svg)](https://github.com/AliSajid/BioPathNet/actions)
-[![Travis-CI](https://img.shields.io/travis/com/AliSajid/BioPathNet)]()
 [![codecov](https://codecov.io/gh/AliSajid/BioPathNet/branch/main/graph/badge.svg?token=HP1VFCRZ0M)]()
 
 ![GitHub release (latest SemVer including
