@@ -725,10 +725,10 @@
     },
     "rmarkdown": {
       "Package": "rmarkdown",
-      "Version": "2.4",
+      "Version": "2.6",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "ec8febc2bd653b754d5b03c9d4b996bb"
+      "Hash": "bc4bac38960b446c183957bfd563e763"
     },
     "roxygen2": {
       "Package": "roxygen2",
