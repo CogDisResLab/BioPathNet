@@ -4,7 +4,6 @@
 # BioPathNet
 
 <!-- badges: start -->
-
 <!-- [![DOI](https://zenodo.org/badge/301042598.svg)](https://zenodo.org/badge/latestdoi/301042598) -->
 
 [![GitHub
@@ -13,10 +12,10 @@ issues](https://img.shields.io/github/issues/AliSajid/BioPathNet)](https://githu
 forks](https://img.shields.io/github/forks/AliSajid/BioPathNet)](https://github.com/AliSajid/BioPathNet/network)
 [![GitHub
 stars](https://img.shields.io/github/stars/AliSajid/BioPathNet)](https://github.com/AliSajid/BioPathNet/stargazers)
+[![R build
+status](https://github.com/AliSajid/BioPathNet/workflows/R-CMD-check/badge.svg)](https://github.com/AliSajid/BioPathNet/actions)
 [![Travis-CI](https://img.shields.io/travis/com/AliSajid/BioPathNet)]()
 [![codecov](https://codecov.io/gh/AliSajid/BioPathNet/branch/main/graph/badge.svg?token=HP1VFCRZ0M)]()
-[![FOSSA
-Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FAliSajid%2FBioPathNet.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FAliSajid%2FBioPathNet?ref=badge_shield)
 
 ![GitHub release (latest SemVer including
 pre-releases)](https://img.shields.io/github/v/release/AliSajid/BioPathNet?include_prereleases&label=latest-release)
@@ -35,6 +34,7 @@ code](https://img.shields.io/tokei/lines/github/AliSajid/BioPathNet)
 bytes](https://img.shields.io/github/languages/code-size/AliSajid/BioPathNet)
 ![GitHub repo
 size](https://img.shields.io/github/repo-size/AliSajid/BioPathNet)
+
 <!-- badges: end -->
 
 The goal of BioPathNet is to …
@@ -63,8 +63,3 @@ This is a basic example which shows you how to solve a common problem:
 library(BioPathNet)
 ## basic example code
 ```
-
-## License
-
-[![FOSSA
-Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FAliSajid%2FBioPathNet.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FAliSajid%2FBioPathNet?ref=badge_large)
