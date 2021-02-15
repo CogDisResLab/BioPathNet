@@ -26,11 +26,11 @@ do_enrichr_pod <- function(bpn, alpha = 0.05, lower = NULL, upper = NULL) {
   inp <- input(bpn)
 
   if (is.null(lower)) {
-    lower <- round(stats::quantile(inp$Value_LogDiffExp, 0.10))
+    lower <- round(stats::quantile(inp$Value_LogDiffExp, 0.10), 3)
   }
 
   if (is.null(upper)) {
-    upper <- round(stats::quantile(inp$Value_LogDiffExp, 0.90))
+    upper <- round(stats::quantile(inp$Value_LogDiffExp, 0.90), 3)
   }
 
   dbs <- c("GO_Biological_Process_2018",
@@ -53,13 +53,13 @@ do_enrichr_pod <- function(bpn, alpha = 0.05, lower = NULL, upper = NULL) {
 
   up_enrichr <- upreg %>%
     pull(.data$Name_GeneSymbol) %>%
-    enrichR::enrichr(.data, dbs) %>%
+    enrichR::enrichr(databases = dbs) %>%
     map2(columns, ~ mutate(.x, namespace = .y)) %>%
     bind_rows
 
   down_enrichr <- downreg %>%
     pull(.data$Name_GeneSymbol) %>%
-    enrichR::enrichr(.data, dbs) %>%
+    enrichR::enrichr(databases = dbs) %>%
     map2(columns, ~ mutate(.x, namespace = .y)) %>%
     bind_rows
 
