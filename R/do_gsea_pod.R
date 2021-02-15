@@ -9,7 +9,8 @@
 #' @examples
 #' TRUE
 load_pathways <- function(species) {
-  utils::data(species)
+  out <- eval(as.name(species))
+  out
 }
 
 
@@ -55,11 +56,11 @@ do_gsea_pod <- function(bpn, species = "hsapiens", gmtfile = NULL,
   inp <- input(bpn)
 
   if (is.null(lower)) {
-    lower <- round(stats::quantile(inp$Value_LogDiffExp, 0.10))
+    lower <- round(stats::quantile(inp$Value_LogDiffExp, 0.10), 3)
   }
 
   if (is.null(upper)) {
-    upper <- round(stats::quantile(inp$Value_LogDiffExp, 0.90))
+    upper <- round(stats::quantile(inp$Value_LogDiffExp, 0.90), 3)
   }
 
   upreg <- inp %>%
