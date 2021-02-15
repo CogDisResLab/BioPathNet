@@ -49,7 +49,8 @@ setClass("GSEAResult",
            num_sig_pos_enriched = "numeric", # Number of significant positively enriched pathways
            num_sig_neg_enriched = "numeric", # Number of significant negatively enriched pathways
            empty = "logical"
-         ))
+         ),
+         prototype = list(empty = TRUE))
 
 
 #' EnrichRResult-class: Class storing EnrichR Results
@@ -98,7 +99,8 @@ setClass("EnrichRResult",
            num_sig_up_enrichr = "numeric", # Number of significant enriched pathways in up-regulated genes
            num_sig_down_enrichr = "numeric", # Number of significant enriched pathways in down-regulated genes
            empty = "logical"
-         ))
+         ),
+         prototype = list(empty = TRUE))
 
 #' iLINCSResult-class: Class storing iLINCS Results
 #'
@@ -144,7 +146,8 @@ setClass("iLINCSResult",
            num_all_perturbagens = "numeric", # Number of all perturbagens returned by iLINCS
            num_filtered_perturbagens = "numeric", # Number of filtered perturbagens returned by iLINCS
            empty = "logical"
-         ))
+         ),
+         prototype = list(empty = TRUE))
 
 #' LEResult-class: Class containing Leading Edge Analysis results
 #'
@@ -161,7 +164,8 @@ setClass("LEResult",
          slots = c(
            placeholder = "numeric",
            empty = "logical"
-         ))
+         ),
+         prototype = list(empty = TRUE))
 
 #' RevigoResult-class: Class containing results from Revigo
 #'
@@ -178,7 +182,8 @@ setClass("RevigoResult",
          slots = c(
            placeholder = "numeric",
            empty = "logical"
-         ))
+         ),
+         prototype = list(empty = TRUE))
 
 #' IntegratedResult-class: Class containing Integrated results
 #'
@@ -194,7 +199,8 @@ setClass("IntegratedResult",
          slots = c(
            placeholder = "numeric",
            empty = "logical"
-         ))
+         ),
+         prototype = list(empty = TRUE))
 
 #' BPNList-class: The BioPathNet Core Class
 #'
