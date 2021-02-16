@@ -72,54 +72,23 @@ setMethod("enrichr<-", "BPNList",
 
 # Methods for GSEAResult
 
-setMethod("initialize",
-          "GSEAResult",
-          function(.Object, ...) {
-            .Object@empty <- TRUE
-            .Object
-          })
+
 
 # Methods for EnrichRResult
 
-setMethod("initialize",
-          "EnrichRResult",
-          function(.Object, ...) {
-            .Object@empty <- TRUE
-            .Object
-          })
+
 
 # Methods for iLINCSResult
 
-setMethod("initialize",
-          "iLINCSResult",
-          function(.Object, ...) {
-            .Object@empty <- TRUE
-            .Object
-          })
+
 
 # Methods for LEResult
 
-setMethod("initialize",
-          "LEResult",
-          function(.Object, ...) {
-            .Object@empty <- TRUE
-            .Object
-          })
+
 
 # Methods for RevigoResult
 
-setMethod("initialize",
-          "RevigoResult",
-          function(.Object, ...) {
-            .Object@empty <- TRUE
-            .Object
-          })
+
 
 # Methods for IntegratedResult
 
-setMethod("initialize",
-          "IntegratedResult",
-          function(.Object, ...) {
-            .Object@empty <- TRUE
-            .Object
-          })

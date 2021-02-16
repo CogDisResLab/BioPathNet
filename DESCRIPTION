@@ -2,28 +2,35 @@ Package: BioPathNet
 Type: Package
 Title: BioPathNet: Three Pod Analysis System
 Version: 0.2.0
-Authors@R: 
-    c(
-    person(given = c("Ali", "Sajid"),
+Authors@R: c(
+  person(
+    given = c("Ali", "Sajid"),
     family = "Imami",
     role = c("aut", "cre"),
     email = "Ali.Sajid.Imami@gmail.com",
-    comment = c(ORCID = "0000-0003-3684-3539")),
-    person(given = "Khaled",
+    comment = c(ORCID = "0000-0003-3684-3539")
+  ),
+  person(
+    given = "Khaled",
     family = "Alganem",
     role = c("aut"),
     email = "Khaled.Alganem@rockets.utoledo.edu",
-    comment = c(ORCID = "0000-0003-3234-7669")),
-    person(given = "Xiaolu",
+    comment = c(ORCID = "0000-0003-3234-7669")
+  ),
+  person(
+    given = "Xiaolu",
     family = "Zhang",
     role = c("aut"),
     email = "Xiaolu.Zhang@utoledo.edu",
-    comment = c(ORCID = "0000-0001-5595-7270")),
-    person(given = c("Marissa", "Ann"),
+    comment = c(ORCID = "0000-0001-5595-7270")
+  ),
+  person(
+    given = c("Marissa", "Ann"),
     family = "Smail",
     role = c("aut"),
     email = "smailma@mail.uc.edu",
-    comment = c(ORCID = "0000-0002-9743-3771")))
+    comment = c(ORCID = "0000-0002-9743-3771")
+  ))
 Maintainer: Ali Sajid Imami <Ali.Sajid.Imami@gmail.com>
 Description: This package aims to provide a simple interface to perform the Three Pod Analysis of RNASeq dataaset. In addition, this also provides utility functions to perform the individual components.
 License: GPL-3
