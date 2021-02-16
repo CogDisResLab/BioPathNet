@@ -70,6 +70,25 @@ setMethod("enrichr<-", "BPNList",
             }
           })
 
+setGeneric("leading", function(object, ...) {
+  standardGeneric("leading")
+})
+setMethod("leading", "BPNList",
+          function(object) {
+            object@leading
+          })
+
+setGeneric("leading<-", function(object, value) {
+  standardGeneric("leading<-")
+})
+setMethod("leading<-", "BPNList",
+          function(object, value) {
+            object@leading <- value
+            if (validObject(object)) {
+              return(object)
+            }
+          })
+
 # Methods for GSEAResult
 
 
