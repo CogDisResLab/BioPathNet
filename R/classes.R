@@ -151,7 +151,12 @@ setClass("iLINCSResult",
 
 #' LEResult-class: Class containing Leading Edge Analysis results
 #'
-#' @slot placeholder numeric.
+#' @slot leading_up tbl_df. A tibble with the results of LE analysis for the upregulated pathways
+#' @slot leading_down tbl_df. A tibble with the results of LE analysis for the downregulated pathways
+#' @slot count_leading_up tbl_df. A tibble with the counts of LE genes for the upregulated pathways
+#' @slot count_leading_down tbl_df. A tibble with the counts of LE genes for the downregulated pathways
+#' @slot num_leading_up numeric. Number of LE genes for the upregulated pathways
+#' @slot num_leading_down numeric. Number of LE genes for the downregulated pathways
 #' @slot empty logical. A simple check for whether or not the object is empty
 #'
 #' @return an object of class LEResult
@@ -162,7 +167,12 @@ setClass("iLINCSResult",
 
 setClass("LEResult",
          slots = c(
-           placeholder = "numeric",
+           leading_up = "tbl_df",
+           leading_down = "tbl_df",
+           count_leading_up = "tbl_df",
+           count_leading_down = "tbl_df",
+           num_leading_up = "numeric",
+           num_leading_down = "numeric",
            empty = "logical"
          ),
          prototype = list(empty = TRUE))
