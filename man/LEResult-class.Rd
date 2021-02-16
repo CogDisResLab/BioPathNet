@@ -13,7 +13,17 @@ LEResult-class: Class containing Leading Edge Analysis results
 \section{Slots}{
 
 \describe{
-\item{\code{placeholder}}{numeric.}
+\item{\code{leading_up}}{tbl_df. A tibble with the results of LE analysis for the upregulated pathways}
+
+\item{\code{leading_down}}{tbl_df. A tibble with the results of LE analysis for the downregulated pathways}
+
+\item{\code{count_leading_up}}{tbl_df. A tibble with the counts of LE genes for the upregulated pathways}
+
+\item{\code{count_leading_down}}{tbl_df. A tibble with the counts of LE genes for the downregulated pathways}
+
+\item{\code{num_leading_up}}{numeric. Number of LE genes for the upregulated pathways}
+
+\item{\code{num_leading_down}}{numeric. Number of LE genes for the downregulated pathways}
 
 \item{\code{empty}}{logical. A simple check for whether or not the object is empty}
 }}
