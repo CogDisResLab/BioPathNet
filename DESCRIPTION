@@ -52,15 +52,18 @@ Imports:
     rlang,
     stats,
     dplyr,
+    tidyr
 Collate: 
     'classes.R'
     'BPNList.R'
     'EnrichRResult.R'
     'GSEAResult.R'
+    'LEResult.R'
     'S4methods.R'
     'data.R'
     'do_enrichr_pod.R'
     'do_gsea_pod.R'
+    'do_leading_pod.R'
     'get_revigo_output.R'
     'prepare_data.R'
 Depends: 
