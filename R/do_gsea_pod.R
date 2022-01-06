@@ -44,7 +44,7 @@ load_pathways <- function(species) {
 
 do_gsea_pod <- function(bpn, species = "hsapiens", gmtfile = NULL,
                         lower = NULL, upper = NULL, alpha = 0.05,
-                        minSize = 15, maxSize = 500) {
+                        minSize = 15, maxSize = 500, rankWithSignificance = FALSE) {
   if (!is.null(species) & is.null(gmtfile)) {
     pathways <- load_pathways(species)
   } else if (is.null(species) & !is.null(gmtfile)) {
@@ -70,7 +70,7 @@ do_gsea_pod <- function(bpn, species = "hsapiens", gmtfile = NULL,
     dplyr::filter(.data$Value_LogDiffExp < lower)
 
   ranked <- inp %>%
-    dplyr::arrange(desc(.data$Value_LogDiffExp)) %>%
+    dplyr::arrange(desc(.data$Value_LogDiffExp * dplyr::if_else(rankWithSignificance, -log10(.data$Significane_pvalue), 1))) %>%
     dplyr::select(!any_of("Significane_pvalue")) %>%
     tibble::deframe()
 
