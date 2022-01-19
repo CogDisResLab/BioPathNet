@@ -30,6 +30,7 @@ load_pathways <- function(species) {
 #' @param alpha numeric The Alpha value for statistical significance. Defaults to 0.05.
 #' @param minSize numeric The minimum number of genes that should be in a pathway for it to be included in the analysis
 #' @param maxSize numeric The maximum number of genes that should be in a pathway for it to be included in the analysis
+#' @param rankWithSignificance logical Whether to rank genes using p-values
 #'
 #' @return An object of class BPNList with its gsea slot populated with the results
 #' @export
