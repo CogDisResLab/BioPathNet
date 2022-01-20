@@ -71,7 +71,7 @@ do_gsea_pod <- function(bpn, species = "hsapiens", gmtfile = NULL,
     dplyr::filter(.data$Value_LogDiffExp < lower)
 
   ranked <- inp %>%
-    dplyr::arrange(desc(.data$Value_LogDiffExp * dplyr::if_else(rankWithSignificance, -log10(.data$Significane_pvalue), 1))) %>%
+    dplyr::arrange(desc(.data$Value_LogDiffExp * ifelse(rankWithSignificance, -log10(.data$Significane_pvalue), 1))) %>%
     dplyr::select(!any_of("Significane_pvalue")) %>%
     tibble::deframe()
 
