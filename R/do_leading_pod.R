@@ -15,9 +15,9 @@
 leading_edge <- function(gsea, direction) {
 
   if (direction == "up") {
-    g <- slot(gsea, "pos_enriched")
+    g <- slot(gsea, "sig_pos_enriched")
   } else if (direction == "down") {
-    g <- slot(gsea, "neg_enriched")
+    g <- slot(gsea, "sig_neg_enriched")
   } else {
     stop("Direction must by one of 'up' or 'down'")
   }

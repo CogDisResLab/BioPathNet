@@ -4,7 +4,7 @@
 \alias{do_enrichr_pod}
 \title{Perform the EnrichR Analysis}
 \usage{
-do_enrichr_pod(bpn, alpha = 0.05, lower = NULL, upper = NULL)
+do_enrichr_pod(bpn, alpha = 0.05, lower = NULL, upper = NULL, useFDR = TRUE)
 }
 \arguments{
 \item{bpn}{BPNList An object of class BPNList created from \link{prepare_data}}
@@ -14,6 +14,8 @@ do_enrichr_pod(bpn, alpha = 0.05, lower = NULL, upper = NULL)
 \item{lower}{numeric The cutoff for down-regulated genes. If not specified, it takes the bottom 10\% of the}
 
 \item{upper}{numeric The cutoff for up-regulated genes. If not specified, it takes the top 10\% of the dataset}
+
+\item{useFDR}{logical Whether to filter by adjusted p-value}
 }
 \value{
 An object of class BPNList with its enrichr slot populated with the results

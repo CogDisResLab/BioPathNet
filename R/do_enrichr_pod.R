@@ -10,6 +10,7 @@
 #' @param alpha numeric The Alpha value for statistical significance. Defaults to 0.05.
 #' @param lower numeric The cutoff for down-regulated genes. If not specified, it takes the bottom 10\% of the
 #' @param upper numeric The cutoff for up-regulated genes. If not specified, it takes the top 10\% of the dataset
+#' @param useFDR logical Whether to filter by adjusted p-value
 #'
 #' @return An object of class BPNList with its enrichr slot populated with the results
 #' @export
@@ -21,7 +22,7 @@
 #'
 #' @examples
 #' TRUE
-do_enrichr_pod <- function(bpn, alpha = 0.05, lower = NULL, upper = NULL) {
+do_enrichr_pod <- function(bpn, alpha = 0.05, lower = NULL, upper = NULL, useFDR=TRUE) {
 
   inp <- input(bpn)
 
@@ -42,10 +43,12 @@ do_enrichr_pod <- function(bpn, alpha = 0.05, lower = NULL, upper = NULL) {
                "Cellular_Component")
 
   upreg <- inp %>%
-    filter(.data$Value_LogDiffExp > upper)
+    filter(.data$Value_LogDiffExp >= upper) %>%
+    dplyr::filter(.data$Significane_pvalue <= alpha)
 
   downreg <- inp %>%
-    filter(.data$Value_LogDiffExp < lower)
+    filter(.data$Value_LogDiffExp <= lower) %>%
+    dplyr::filter(.data$Significane_pvalue <= alpha)
 
   #TODO Make a test for enrichR being live here
   options(enrichR.base.address = "http://amp.pharm.mssm.edu/Enrichr/")
@@ -64,7 +67,7 @@ do_enrichr_pod <- function(bpn, alpha = 0.05, lower = NULL, upper = NULL) {
     bind_rows
 
   e <- EnrichRResult(
-    up_enrichr, down_enrichr, upreg, downreg, alpha, upper, lower, dbs
+    up_enrichr, down_enrichr, upreg, downreg, alpha, upper, lower, dbs, useFDR
   )
 
   enrichr(bpn) <- e

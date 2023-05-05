@@ -11,6 +11,7 @@ NULL
 #' @param upper numeric Upper threshold for up-regulated genes
 #' @param alpha numeric Alpha level of significance
 #' @param dbs character a vector of the databases used for the enrichment analysis
+#' @param useFDR logical Whether to filter by adjusted p-value
 #'
 #' @return an object of class EnrichRResult
 #' @export
@@ -21,7 +22,7 @@ NULL
 #' @examples
 #' TRUE
 
-EnrichRResult <- function(up_results, down_results, upreg, downreg, alpha, upper, lower, dbs) {
+EnrichRResult <- function(up_results, down_results, upreg, downreg, alpha, upper, lower, dbs, useFDR) {
 
   alpha <- alpha
   threshold_up <- upper
@@ -41,13 +42,23 @@ EnrichRResult <- function(up_results, down_results, upreg, downreg, alpha, upper
   down_enrichr <- down_results %>%
     tibble::tibble()
 
-  sig_up_enrichr <- up_enrichr %>%
-    dplyr::filter(.data$P.value < alpha) %>%
-    tibble::tibble()
+  if(useFDR) {
+    sig_up_enrichr <- up_enrichr %>%
+      dplyr::filter(.data$Adjusted.P.value <= alpha) %>%
+      tibble::tibble()
 
-  sig_down_enrichr <- down_enrichr %>%
-    dplyr::filter(.data$P.value < alpha) %>%
-    tibble::tibble()
+    sig_down_enrichr <- down_enrichr %>%
+      dplyr::filter(.data$Adjusted.P.value <= alpha) %>%
+      tibble::tibble()
+  } else {
+    sig_up_enrichr <- up_enrichr %>%
+      dplyr::filter(.data$P.value <= alpha) %>%
+      tibble::tibble()
+
+    sig_down_enrichr <- down_enrichr %>%
+      dplyr::filter(.data$P.value <= alpha) %>%
+      tibble::tibble()
+  }
 
   num_upreg <- nrow(upreg)
   num_downreg <- nrow(downreg)

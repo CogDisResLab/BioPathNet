@@ -12,7 +12,9 @@ do_gsea_pod(
   upper = NULL,
   alpha = 0.05,
   minSize = 15,
-  maxSize = 500
+  maxSize = 500,
+  rankWithSignificance = FALSE,
+  useFDR = TRUE
 )
 }
 \arguments{
@@ -31,6 +33,10 @@ do_gsea_pod(
 \item{minSize}{numeric The minimum number of genes that should be in a pathway for it to be included in the analysis}
 
 \item{maxSize}{numeric The maximum number of genes that should be in a pathway for it to be included in the analysis}
+
+\item{rankWithSignificance}{logical Whether to rank genes using p-values}
+
+\item{useFDR}{logical Whether to filter by adjusted p-value}
 }
 \value{
 An object of class BPNList with its gsea slot populated with the results
