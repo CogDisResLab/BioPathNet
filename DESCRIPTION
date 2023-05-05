@@ -36,16 +36,16 @@ Description: This package aims to provide a simple interface to perform the Thre
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
+LazyDataCompression: xz
 Suggests: 
     testthat
-RoxygenNote: 7.1.1
+RoxygenNote: 7.2.3
 Imports: 
     magrittr,
     tibble,
     readr,
     stringr,
     purrr,
-    base,
     methods,
     fgsea,
     enrichR,

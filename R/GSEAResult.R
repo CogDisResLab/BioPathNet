@@ -10,6 +10,7 @@ NULL
 #' @param alpha numeric Alpha level of significance
 #' @param upreg tbl_df A tibble of up-regulated genes
 #' @param downreg tbl_df A tibble of down-regulated genes
+#' @param useFDR logical Whether to filter by adjusted p-value
 #'
 #' @return an object of class GSEAResult
 #' @export
@@ -19,7 +20,7 @@ NULL
 #'
 #' @examples
 #' TRUE
-GSEAResult <- function(results, pathways, lower, upper, alpha, upreg, downreg) {
+GSEAResult <- function(results, pathways, lower, upper, alpha, upreg, downreg, useFDR) {
 
   alpha <- alpha
   threshold_up <- upper
@@ -37,15 +38,31 @@ GSEAResult <- function(results, pathways, lower, upper, alpha, upreg, downreg) {
     dplyr::arrange(desc(.data$ES), .data$pval) %>%
     tibble::tibble()
 
-  sig_pos_enriched <- pos_enriched %>%
-    dplyr::filter(.data$pval < alpha) %>%
-    dplyr::arrange(desc(.data$ES), .data$pval) %>%
-    tibble::tibble()
 
-  sig_neg_enriched <- neg_enriched %>%
-    dplyr::filter(.data$pval < alpha) %>%
-    dplyr::arrange(desc(.data$ES), .data$pval) %>%
-    tibble::tibble()
+  if(useFDR) {
+    sig_pos_enriched <- pos_enriched %>%
+      dplyr::filter(.data$padj <= alpha) %>%
+      dplyr::arrange(desc(.data$ES), .data$pval) %>%
+      tibble::tibble()
+
+    sig_neg_enriched <- neg_enriched %>%
+      dplyr::filter(.data$padj <= alpha) %>%
+      dplyr::arrange(desc(.data$ES), .data$pval) %>%
+      tibble::tibble()
+
+  } else {
+    sig_pos_enriched <- pos_enriched %>%
+      dplyr::filter(.data$pval < alpha) %>%
+      dplyr::arrange(desc(.data$ES), .data$pval) %>%
+      tibble::tibble()
+
+    sig_neg_enriched <- neg_enriched %>%
+      dplyr::filter(.data$pval < alpha) %>%
+      dplyr::arrange(desc(.data$ES), .data$pval) %>%
+      tibble::tibble()
+
+  }
+
 
   num_tested <- nrow(results)
   num_upreg <- nrow(upreg)

@@ -12,7 +12,8 @@ EnrichRResult(
   alpha,
   upper,
   lower,
-  dbs
+  dbs,
+  useFDR
 )
 }
 \arguments{
@@ -31,6 +32,8 @@ EnrichRResult(
 \item{lower}{numeric Lower threshold for down-regulated genes}
 
 \item{dbs}{character a vector of the databases used for the enrichment analysis}
+
+\item{useFDR}{logical Whether to filter by adjusted p-value}
 }
 \value{
 an object of class EnrichRResult

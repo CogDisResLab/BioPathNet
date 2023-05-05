@@ -31,6 +31,7 @@ load_pathways <- function(species) {
 #' @param minSize numeric The minimum number of genes that should be in a pathway for it to be included in the analysis
 #' @param maxSize numeric The maximum number of genes that should be in a pathway for it to be included in the analysis
 #' @param rankWithSignificance logical Whether to rank genes using p-values
+#' @param useFDR logical Whether to filter by adjusted p-value
 #'
 #' @return An object of class BPNList with its gsea slot populated with the results
 #' @export
@@ -45,13 +46,13 @@ load_pathways <- function(species) {
 
 do_gsea_pod <- function(bpn, species = "hsapiens", gmtfile = NULL,
                         lower = NULL, upper = NULL, alpha = 0.05,
-                        minSize = 15, maxSize = 500, rankWithSignificance = FALSE) {
-  if (!is.null(species) & is.null(gmtfile)) {
-    pathways <- load_pathways(species)
-  } else if (is.null(species) & !is.null(gmtfile)) {
+                        minSize = 15, maxSize = 500, rankWithSignificance = FALSE, useFDR=TRUE) {
+  if(!is.null(gmtfile)) {
     pathways <- fgsea::gmtPathways(gmtfile)
+  } else if(!is.null(species)) {
+    pathways <- load_pathways(species)
   } else {
-    stop("please specify only one of species and gmtfile")
+    stop("please specify one of species or gmtfile")
   }
 
   inp <- input(bpn)
@@ -71,14 +72,14 @@ do_gsea_pod <- function(bpn, species = "hsapiens", gmtfile = NULL,
     dplyr::filter(.data$Value_LogDiffExp < lower)
 
   ranked <- inp %>%
-    dplyr::arrange(desc(.data$Value_LogDiffExp * ifelse(rankWithSignificance, -log10(.data$Significane_pvalue), 1))) %>%
-    dplyr::select(!any_of("Significane_pvalue")) %>%
+    dplyr::mutate(score = (.data$Value_LogDiffExp * ifelse(rankWithSignificance, -log10(.data$Significane_pvalue), 1))) %>%
+    dplyr::select(!any_of(c("Significane_pvalue", "Significane_pvalue"))) %>%
     tibble::deframe()
 
   results <- fgsea::fgsea(pathways, ranked, minSize = minSize, maxSize = maxSize)
 
   g <- GSEAResult(
-    results, pathways, lower, upper, alpha, upreg, downreg
+    results, pathways, lower, upper, alpha, upreg, downreg, useFDR
   )
 
   gsea(bpn) <- g

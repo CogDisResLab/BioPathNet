@@ -4,7 +4,7 @@
 \alias{GSEAResult}
 \title{Construct a GSEAResult Object}
 \usage{
-GSEAResult(results, pathways, lower, upper, alpha, upreg, downreg)
+GSEAResult(results, pathways, lower, upper, alpha, upreg, downreg, useFDR)
 }
 \arguments{
 \item{results}{tbl_df A tibble with the results from fgsea}
@@ -20,6 +20,8 @@ GSEAResult(results, pathways, lower, upper, alpha, upreg, downreg)
 \item{upreg}{tbl_df A tibble of up-regulated genes}
 
 \item{downreg}{tbl_df A tibble of down-regulated genes}
+
+\item{useFDR}{logical Whether to filter by adjusted p-value}
 }
 \value{
 an object of class GSEAResult
