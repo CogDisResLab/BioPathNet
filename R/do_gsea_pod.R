@@ -73,7 +73,7 @@ do_gsea_pod <- function(bpn, species = "hsapiens", gmtfile = NULL,
 
   ranked <- inp %>%
     dplyr::mutate(score = (.data$Value_LogDiffExp * ifelse(rankWithSignificance, -log10(.data$Significane_pvalue), 1))) %>%
-    dplyr::select(!any_of(c("Significane_pvalue", "Significane_pvalue"))) %>%
+    dplyr::select(!any_of(c("Value_LogDiffExp", "Significane_pvalue"))) %>%
     tibble::deframe()
 
   results <- fgsea::fgsea(pathways, ranked, minSize = minSize, maxSize = maxSize)
