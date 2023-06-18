@@ -34,9 +34,9 @@ do_enrichr_pod <- function(bpn, alpha = 0.05, lower = NULL, upper = NULL, useFDR
     upper <- round(stats::quantile(inp$Value_LogDiffExp, 0.90), 3)
   }
 
-  dbs <- c("GO_Biological_Process_2021",
-           "GO_Molecular_Function_2021",
-           "GO_Cellular_Component_2021")
+  dbs <- c("GO_Biological_Process_2023",
+           "GO_Molecular_Function_2023",
+           "GO_Cellular_Component_2023")
 
   columns <- c("Biological_Process",
                "Molecular_Function",
