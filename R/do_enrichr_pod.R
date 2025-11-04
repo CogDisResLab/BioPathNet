@@ -43,10 +43,12 @@ do_enrichr_pod <- function(bpn, alpha = 0.05, lower = NULL, upper = NULL, useFDR
                "Cellular_Component")
 
   upreg <- inp %>%
+    filter(.data$Value_LogDiffExp >= 0) %>%
     filter(.data$Value_LogDiffExp >= upper) %>%
     dplyr::filter(.data$Significane_pvalue <= alpha)
 
   downreg <- inp %>%
+    filter(.data$Value_LogDiffExp <= 0) %>%
     filter(.data$Value_LogDiffExp <= lower) %>%
     dplyr::filter(.data$Significane_pvalue <= alpha)
 

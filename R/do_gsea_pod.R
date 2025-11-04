@@ -45,8 +45,9 @@ load_pathways <- function(species) {
 #' TRUE
 
 do_gsea_pod <- function(bpn, species = "hsapiens", gmtfile = NULL,
-                        lower = NULL, upper = NULL, alpha = 0.05,
-                        minSize = 15, maxSize = 500, rankWithSignificance = FALSE, useFDR=TRUE) {
+                        alpha = 0.05, minSize = 15, maxSize = 500,
+                        rankWithSignificance = FALSE, useFDR=TRUE) {
+
   if(!is.null(gmtfile)) {
     pathways <- fgsea::gmtPathways(gmtfile)
   } else if(!is.null(species)) {
@@ -57,19 +58,11 @@ do_gsea_pod <- function(bpn, species = "hsapiens", gmtfile = NULL,
 
   inp <- input(bpn)
 
-  if (is.null(lower)) {
-    lower <- round(stats::quantile(inp$Value_LogDiffExp, 0.10), 3)
-  }
-
-  if (is.null(upper)) {
-    upper <- round(stats::quantile(inp$Value_LogDiffExp, 0.90), 3)
-  }
-
   upreg <- inp %>%
-    dplyr::filter(.data$Value_LogDiffExp > upper)
+    dplyr::filter(.data$Value_LogDiffExp > 0)
 
   downreg <- inp %>%
-    dplyr::filter(.data$Value_LogDiffExp < lower)
+    dplyr::filter(.data$Value_LogDiffExp < 0)
 
   ranked <- inp %>%
     dplyr::mutate(score = (.data$Value_LogDiffExp * ifelse(rankWithSignificance, -log10(.data$Significane_pvalue), 1))) %>%
