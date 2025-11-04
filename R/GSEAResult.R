@@ -5,8 +5,6 @@ NULL
 #'
 #' @param results tbl_df A tibble with the results from fgsea
 #' @param pathways list A list of vectors with gene sets
-#' @param lower numeric Lower threshold for down-regulated genes
-#' @param upper numeric Upper threshold for up-regulated genes
 #' @param alpha numeric Alpha level of significance
 #' @param upreg tbl_df A tibble of up-regulated genes
 #' @param downreg tbl_df A tibble of down-regulated genes
@@ -20,11 +18,9 @@ NULL
 #'
 #' @examples
 #' TRUE
-GSEAResult <- function(results, pathways, lower, upper, alpha, upreg, downreg, useFDR) {
+GSEAResult <- function(results, pathways, alpha, upreg, downreg, useFDR) {
 
   alpha <- alpha
-  threshold_up <- upper
-  threshold_down <- lower
   upregulated_genes <- upreg
   downregulated_genes <- downreg
 
@@ -75,8 +71,6 @@ GSEAResult <- function(results, pathways, lower, upper, alpha, upreg, downreg, u
   g <- new("GSEAResult",
            alpha = alpha,
            pathways = pathways,
-           threshold_up = threshold_up,
-           threshold_down = threshold_down,
            upregulated_genes = upregulated_genes,
            downregulated_genes = downregulated_genes,
            pos_enriched = pos_enriched,
