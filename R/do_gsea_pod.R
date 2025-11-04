@@ -72,7 +72,7 @@ do_gsea_pod <- function(bpn, species = "hsapiens", gmtfile = NULL,
   results <- fgsea::fgsea(pathways, ranked, minSize = minSize, maxSize = maxSize)
 
   g <- GSEAResult(
-    results, pathways, lower, upper, alpha, upreg, downreg, useFDR
+    results, pathways, alpha, upreg, downreg, useFDR
   )
 
   gsea(bpn) <- g
